@@ -1,0 +1,40 @@
+{
+  "name": "xmlmc-js",
+  "version": "1.0.0",
+  "description": "Wrapper for Hornbill Supportworks XMLMC API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./src --out-dir ./lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richbai90/xmlmc-js.git"
+  },
+  "keywords": [
+    "supportworks",
+    "xmlmc",
+    "api"
+  ],
+  "author": "Rich Gordon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richbai90/xmlmc-js/issues"
+  },
+  "homepage": "https://github.com/richbai90/xmlmc-js#readme",
+  "dependencies": {
+    "@3846masa/axios-cookiejar-support": "^0.1.2",
+    "axios": "^0.17.0",
+    "lodash": "^4.17.4",
+    "tough-cookie": "^2.3.3",
+    "xmlbuilder": "^9.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-dynamic-import-node": "^1.1.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
