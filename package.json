@@ -1,11 +1,11 @@
 {
   "name": "xmlmc",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Wrapper for Hornbill Supportworks XMLMC API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -f ./XmlMethodCall.d.ts && rm -rf ./lib && tsc -d true && babel lib/esnext --out-dir lib --copy-files && cp -i ./lib/esnext/XmlMethodCall.d.ts ./XmlMethodCall.d.ts && typedoc --out documentation ./src/"
+    "build": "rm -f ./XmlMethodCall.d.ts && rm -rf ./lib && tsc -d true && babel lib/esnext --out-dir lib --copy-files && cp -i ./lib/esnext/XmlMethodCall.d.ts ./XmlMethodCall.d.ts && typedoc --out docs ./src/"
   },
   "repository": {
     "type": "git",
