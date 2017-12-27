@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FileList | xmlmc-js</title>
+	<title>XmlmcRequest | xmlmc</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">xmlmc-js</a>
+					<a href="../index.html" class="title">xmlmc</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -59,13 +59,13 @@
 					<a href="../modules/_types_xmlmctypes_.html">&quot;types/XmlmcTypes&quot;</a>
 				</li>
 				<li>
-					<a href="../modules/_types_xmlmctypes_.xmlmc.html">xmlmc</a>
+					<a href="../modules/_types_xmlmctypes_.xmlmctypes.html">xmlmcTypes</a>
 				</li>
 				<li>
-					<a href="_types_xmlmctypes_.xmlmc.filelist.html">FileList</a>
+					<a href="_types_xmlmctypes_.xmlmctypes.xmlmcrequest.html">XmlmcRequest</a>
 				</li>
 			</ul>
-			<h1>Interface FileList</h1>
+			<h1>Interface XmlmcRequest</h1>
 		</div>
 	</div>
 </header>
@@ -76,8 +76,14 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">FileList</span>
+						<span class="target">XmlmcRequest</span>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implemented by</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../classes/_request_.request.html" class="tsd-signature-type">Request</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -87,9 +93,17 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_xmlmctypes_.xmlmc.filelist.html#filename" class="tsd-kind-icon">file<wbr>Name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_xmlmctypes_.xmlmc.filelist.html#filepath" class="tsd-kind-icon">file<wbr>Path</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_xmlmctypes_.xmlmc.filelist.html#filesize" class="tsd-kind-icon">file<wbr>Size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_xmlmctypes_.xmlmctypes.xmlmcrequest.html#method" class="tsd-kind-icon">method</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_xmlmctypes_.xmlmctypes.xmlmcrequest.html#paramsnotset" class="tsd-kind-icon">params<wbr>Not<wbr>Set</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_xmlmctypes_.xmlmctypes.xmlmcrequest.html#service" class="tsd-kind-icon">service</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_xmlmctypes_.xmlmctypes.xmlmcrequest.html#xmlmc" class="tsd-kind-icon">xmlmc</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_types_xmlmctypes_.xmlmctypes.xmlmcrequest.html#_createxmlmc" class="tsd-kind-icon">_create<wbr>Xmlmc</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_types_xmlmctypes_.xmlmctypes.xmlmcrequest.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
 							</ul>
 						</section>
 					</div>
@@ -98,34 +112,93 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="filename" class="tsd-anchor"></a>
-					<h3>file<wbr>Name</h3>
-					<div class="tsd-signature tsd-kind-icon">file<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="method" class="tsd-anchor"></a>
+					<h3>method</h3>
+					<div class="tsd-signature tsd-kind-icon">method<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/81a7b5f/src/types/XmlmcTypes.ts#L165">types/XmlmcTypes.ts:165</a></li>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6861663/src/types/XmlmcTypes.ts#L29">types/XmlmcTypes.ts:29</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="filepath" class="tsd-anchor"></a>
-					<h3>file<wbr>Path</h3>
-					<div class="tsd-signature tsd-kind-icon">file<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="paramsnotset" class="tsd-anchor"></a>
+					<h3>params<wbr>Not<wbr>Set</h3>
+					<div class="tsd-signature tsd-kind-icon">params<wbr>Not<wbr>Set<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/81a7b5f/src/types/XmlmcTypes.ts#L167">types/XmlmcTypes.ts:167</a></li>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6861663/src/types/XmlmcTypes.ts#L30">types/XmlmcTypes.ts:30</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="filesize" class="tsd-anchor"></a>
-					<h3>file<wbr>Size</h3>
-					<div class="tsd-signature tsd-kind-icon">file<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="service" class="tsd-anchor"></a>
+					<h3>service</h3>
+					<div class="tsd-signature tsd-kind-icon">service<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/81a7b5f/src/types/XmlmcTypes.ts#L166">types/XmlmcTypes.ts:166</a></li>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6861663/src/types/XmlmcTypes.ts#L28">types/XmlmcTypes.ts:28</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="xmlmc" class="tsd-anchor"></a>
+					<h3>xmlmc</h3>
+					<div class="tsd-signature tsd-kind-icon">xmlmc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">XMLElementOrXMLNode</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6861663/src/types/XmlmcTypes.ts#L31">types/XmlmcTypes.ts:31</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="_createxmlmc" class="tsd-anchor"></a>
+					<h3>_create<wbr>Xmlmc</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">_create<wbr>Xmlmc<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><a href="../modules/_types_xmlmctypes_.xmlmctypes.html#xmlmcparam" class="tsd-signature-type">XmlmcParam</a>, el<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">XMLElementOrXMLNode</span>, key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6861663/src/types/XmlmcTypes.ts#L33">types/XmlmcTypes.ts:33</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>params: <a href="../modules/_types_xmlmctypes_.xmlmctypes.html#xmlmcparam" class="tsd-signature-type">XmlmcParam</a></h5>
+								</li>
+								<li>
+									<h5>el: <span class="tsd-signature-type">XMLElementOrXMLNode</span></h5>
+								</li>
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="tostring" class="tsd-anchor"></a>
+					<h3>to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6861663/src/types/XmlmcTypes.ts#L35">types/XmlmcTypes.ts:35</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -139,7 +212,7 @@
 						<a href="../modules/_types_xmlmctypes_.html">"types/<wbr>Xmlmc<wbr>Types"</a>
 						<ul>
 							<li class="current tsd-kind-module tsd-parent-kind-external-module">
-								<a href="../modules/_types_xmlmctypes_.xmlmc.html">xmlmc</a>
+								<a href="../modules/_types_xmlmctypes_.xmlmctypes.html">xmlmc<wbr>Types</a>
 							</li>
 						</ul>
 					</li>
@@ -148,79 +221,88 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
-						<a href="../enums/_types_xmlmctypes_.xmlmc.workitemactionby.html" class="tsd-kind-icon">Work<wbr>Item<wbr>Action<wbr>By</a>
+						<a href="../enums/_types_xmlmctypes_.xmlmctypes.workitemactionby.html" class="tsd-kind-icon">Work<wbr>Item<wbr>Action<wbr>By</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_xmlmctypes_.xmlmc.embeddedfileattachment.html" class="tsd-kind-icon">Embedded<wbr>File<wbr>Attachment</a>
+						<a href="_types_xmlmctypes_.xmlmctypes.embeddedfileattachment.html" class="tsd-kind-icon">Embedded<wbr>File<wbr>Attachment</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_xmlmctypes_.xmlmc.fileattachment.html" class="tsd-kind-icon">File<wbr>Attachment</a>
+						<a href="_types_xmlmctypes_.xmlmctypes.fileattachment.html" class="tsd-kind-icon">File<wbr>Attachment</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_xmlmctypes_.xmlmctypes.filelist.html" class="tsd-kind-icon">File<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_xmlmctypes_.xmlmctypes.keypair.html" class="tsd-kind-icon">Key<wbr>Pair</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_xmlmctypes_.xmlmctypes.newworklistitem.html" class="tsd-kind-icon">New<wbr>Work<wbr>List<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_xmlmctypes_.xmlmctypes.sessionvariable.html" class="tsd-kind-icon">Session<wbr>Variable</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_xmlmctypes_.xmlmctypes.userlibraryresourceitem.html" class="tsd-kind-icon">User<wbr>Library<wbr>Resource<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_xmlmctypes_.xmlmctypes.workiteminfo.html" class="tsd-kind-icon">Work<wbr>Item<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_xmlmctypes_.xmlmctypes.workitemlist.html" class="tsd-kind-icon">Work<wbr>Item<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_types_xmlmctypes_.xmlmctypes.xmlmcparams.html" class="tsd-kind-icon">Xmlmc<wbr>Params</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_xmlmctypes_.xmlmc.filelist.html" class="tsd-kind-icon">File<wbr>List</a>
+						<a href="_types_xmlmctypes_.xmlmctypes.xmlmcrequest.html" class="tsd-kind-icon">Xmlmc<wbr>Request</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_types_xmlmctypes_.xmlmc.filelist.html#filename" class="tsd-kind-icon">file<wbr>Name</a>
+								<a href="_types_xmlmctypes_.xmlmctypes.xmlmcrequest.html#method" class="tsd-kind-icon">method</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_types_xmlmctypes_.xmlmc.filelist.html#filepath" class="tsd-kind-icon">file<wbr>Path</a>
+								<a href="_types_xmlmctypes_.xmlmctypes.xmlmcrequest.html#paramsnotset" class="tsd-kind-icon">params<wbr>Not<wbr>Set</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_types_xmlmctypes_.xmlmc.filelist.html#filesize" class="tsd-kind-icon">file<wbr>Size</a>
+								<a href="_types_xmlmctypes_.xmlmctypes.xmlmcrequest.html#service" class="tsd-kind-icon">service</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_types_xmlmctypes_.xmlmctypes.xmlmcrequest.html#xmlmc" class="tsd-kind-icon">xmlmc</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_types_xmlmctypes_.xmlmctypes.xmlmcrequest.html#_createxmlmc" class="tsd-kind-icon">_create<wbr>Xmlmc</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_types_xmlmctypes_.xmlmctypes.xmlmcrequest.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_xmlmctypes_.xmlmc.keypair.html" class="tsd-kind-icon">Key<wbr>Pair</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_xmlmctypes_.xmlmc.newworklistitem.html" class="tsd-kind-icon">New<wbr>Work<wbr>List<wbr>Item</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_xmlmctypes_.xmlmc.sessionvariable.html" class="tsd-kind-icon">Session<wbr>Variable</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_xmlmctypes_.xmlmc.userlibraryresourceitem.html" class="tsd-kind-icon">User<wbr>Library<wbr>Resource<wbr>Item</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_xmlmctypes_.xmlmc.workiteminfo.html" class="tsd-kind-icon">Work<wbr>Item<wbr>Info</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_xmlmctypes_.xmlmc.workitemlist.html" class="tsd-kind-icon">Work<wbr>Item<wbr>List</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_xmlmctypes_.xmlmc.xmlmcparams.html" class="tsd-kind-icon">Xmlmc<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_xmlmctypes_.xmlmc.xmlmcrequest.html" class="tsd-kind-icon">Xmlmc<wbr>Request</a>
-					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/_types_xmlmctypes_.xmlmc.html#xmlmcparam" class="tsd-kind-icon">Xmlmc<wbr>Param</a>
+						<a href="../modules/_types_xmlmctypes_.xmlmctypes.html#xmlmcparam" class="tsd-kind-icon">Xmlmc<wbr>Param</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/_types_xmlmctypes_.xmlmc.html#embeddedfileattachmentmap" class="tsd-kind-icon">embedded<wbr>File<wbr>Attachment<wbr>Map</a>
+						<a href="../modules/_types_xmlmctypes_.xmlmctypes.html#embeddedfileattachmentmap" class="tsd-kind-icon">embedded<wbr>File<wbr>Attachment<wbr>Map</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/_types_xmlmctypes_.xmlmc.html#fileattachmentmap" class="tsd-kind-icon">file<wbr>Attachment<wbr>Map</a>
+						<a href="../modules/_types_xmlmctypes_.xmlmctypes.html#fileattachmentmap" class="tsd-kind-icon">file<wbr>Attachment<wbr>Map</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/_types_xmlmctypes_.xmlmc.html#keypairmap" class="tsd-kind-icon">key<wbr>Pair<wbr>Map</a>
+						<a href="../modules/_types_xmlmctypes_.xmlmctypes.html#keypairmap" class="tsd-kind-icon">key<wbr>Pair<wbr>Map</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/_types_xmlmctypes_.xmlmc.html#newworklistitemmap" class="tsd-kind-icon">new<wbr>Work<wbr>List<wbr>Item<wbr>Map</a>
+						<a href="../modules/_types_xmlmctypes_.xmlmctypes.html#newworklistitemmap" class="tsd-kind-icon">new<wbr>Work<wbr>List<wbr>Item<wbr>Map</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/_types_xmlmctypes_.xmlmc.html#sessionvariablemap" class="tsd-kind-icon">session<wbr>Variable<wbr>Map</a>
+						<a href="../modules/_types_xmlmctypes_.xmlmctypes.html#sessionvariablemap" class="tsd-kind-icon">session<wbr>Variable<wbr>Map</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/_types_xmlmctypes_.xmlmc.html#userlibraryresourcemap" class="tsd-kind-icon">user<wbr>Library<wbr>Resource<wbr>Map</a>
+						<a href="../modules/_types_xmlmctypes_.xmlmctypes.html#userlibraryresourcemap" class="tsd-kind-icon">user<wbr>Library<wbr>Resource<wbr>Map</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/_types_xmlmctypes_.xmlmc.html#workiteminfomap" class="tsd-kind-icon">work<wbr>Item<wbr>Info<wbr>Map</a>
+						<a href="../modules/_types_xmlmctypes_.xmlmctypes.html#workiteminfomap" class="tsd-kind-icon">work<wbr>Item<wbr>Info<wbr>Map</a>
 					</li>
 				</ul>
 			</nav>

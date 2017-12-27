@@ -1,1 +1,1 @@
-module.exports = require('./lib/Xmlmc');
+module.exports = require('./lib/XmlMethodCall').default;

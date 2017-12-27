@@ -1,7 +1,7 @@
 import {XMLElementOrXMLNode} from "xmlbuilder";
 
 
-module xmlmc {
+module xmlmcTypes {
 
     export type XmlmcParam =
         string
@@ -170,4 +170,4 @@ module xmlmc {
 
 }
 
-export = xmlmc
+export = xmlmcTypes

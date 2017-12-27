@@ -1,5 +1,5 @@
 import { XMLElementOrXMLNode } from "xmlbuilder";
-declare module xmlmc {
+declare module xmlmcTypes {
     type XmlmcParam = string | number | Date | XmlmcParams | boolean | SessionVariable | EmbeddedFileAttachment | NewWorkListItem | FileAttachment | KeyPair | WorkItemList | WorkItemInfo | FileList | UserLibraryResourceItem | undefined;
     interface XmlmcParams {
         [key: string]: XmlmcParam;
@@ -91,4 +91,4 @@ declare module xmlmc {
         filePath: string;
     }
 }
-export = xmlmc;
+export = xmlmcTypes;
