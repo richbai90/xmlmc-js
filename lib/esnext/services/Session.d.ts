@@ -1,0 +1,33 @@
+import * as paramTypes from '../types/SessionTypes';
+import { AxiosError, AxiosResponse } from "axios";
+import { Connection } from '../Connection';
+import Xmlmc from '../XmlMethodCall';
+export declare class Session {
+    private connection;
+    private xmlmc;
+    private service;
+    private paramMap;
+    constructor(connection: Connection, xmlmc: Xmlmc);
+    analystLogoff(optionalParams?: paramTypes.analystLogoffParams): Promise<AxiosResponse | AxiosError>;
+    analystLogon(userId: string, password: string, optionalParams?: paramTypes.analystLogonParams): Promise<AxiosResponse | AxiosError>;
+    analystLogonTrust(userId: string, secretKey: string, optionalParams?: paramTypes.analystLogonTrustParams): Promise<AxiosResponse | AxiosError>;
+    bindSession(sessionId: string, optionalParams?: paramTypes.bindSessionParams): Promise<AxiosResponse | AxiosError>;
+    changePassword(oldPassword: string, newPassword: string, optionalParams?: paramTypes.changePasswordParams): Promise<AxiosResponse | AxiosError>;
+    closeLocalSession(optionalParams?: paramTypes.closeLocalSessionParams): Promise<AxiosResponse | AxiosError>;
+    convertDateTimeInText(inputText: string, optionalParams?: paramTypes.convertDateTimeInTextParams): Promise<AxiosResponse | AxiosError>;
+    createLocalSession(optionalParams?: paramTypes.createLocalSessionParams): Promise<AxiosResponse | AxiosError>;
+    getSessionDDInfo(optionalParams?: paramTypes.getSessionDDInfoParams): Promise<AxiosResponse | AxiosError>;
+    getSessionInfo(optionalParams?: paramTypes.getSessionInfoParams): Promise<AxiosResponse | AxiosError>;
+    getSessionInfo2(optionalParams?: paramTypes.getSessionInfo2Params): Promise<AxiosResponse | AxiosError>;
+    hasRight(userRight: string, optionalParams?: paramTypes.hasRightParams): Promise<AxiosResponse | AxiosError>;
+    isSessionValid(optionalParams?: paramTypes.isSessionValidParams): Promise<AxiosResponse | AxiosError>;
+    lockCustomerAccount(selfServiceInstance: string, customerId: string, permanent: boolean, optionalParams?: paramTypes.lockCustomerAccountParams): Promise<AxiosResponse | AxiosError>;
+    selfServiceLogoff(optionalParams?: paramTypes.selfServiceLogoffParams): Promise<AxiosResponse | AxiosError>;
+    selfServiceLogon(selfServiceInstance: string, customerId: string, password: string, optionalParams?: paramTypes.selfServiceLogonParams): Promise<AxiosResponse | AxiosError>;
+    setDatabaseRight(tableName: string, rightFlag: number, rightAllowed: boolean, optionalParams?: paramTypes.setDatabaseRightParams): Promise<AxiosResponse | AxiosError>;
+    setOutputValidation(validateResultMessage: boolean, optionalParams?: paramTypes.setOutputValidationParams): Promise<AxiosResponse | AxiosError>;
+    setUserRight(rightClass: string, rightFlag: number, rightAllowed: boolean, optionalParams?: paramTypes.setUserRightParams): Promise<AxiosResponse | AxiosError>;
+    setVariable(sessionVariable: Object, optionalParams?: paramTypes.setVariableParams): Promise<AxiosResponse | AxiosError>;
+    switchAnalystContext(groupId: string, optionalParams?: paramTypes.switchAnalystContextParams): Promise<AxiosResponse | AxiosError>;
+    unlockCustomerAccount(selfServiceInstance: string, customerId: string, optionalParams?: paramTypes.unlockCustomerAccountParams): Promise<AxiosResponse | AxiosError>;
+}
