@@ -27,4 +27,4 @@ function promiseCatcher(e) {
 
 The default export is the `XmlMethodCall` class
 
-View the full docs here 
+View the full docs [here](https://richbai90.github.io/xmlmc-js/) 
