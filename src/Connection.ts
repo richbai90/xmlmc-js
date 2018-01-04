@@ -74,6 +74,7 @@ export class Connection {
 
         this.endpoint = http.create({
             baseURL: url,
+            withCredentials: true,
             headers: {
                 "Content-Type": "text/xmlmc",
                 "Charset": "UTF-8",
@@ -94,7 +95,7 @@ export class Connection {
     async sendRequest(xmlmc: Request): Promise<XmlmcResponse> {
         return new Promise<XmlmcResponse>((resolve, reject) => {
             const post: string = this.port === 80 || this.https ? '/xmlmc/' : '/sw';
-            this.endpoint.post(post, xmlmc.toString()).then((response: AxiosResponse) => {
+            this.endpoint.post(post, xmlmc.toString(), {withCredentials: true}).then((response: AxiosResponse) => {
                 response.data.status ? resolve(<XmlmcResponse>response.data) : reject(response.data);
             }).catch((err: AxiosError) => {
                 reject(err);
