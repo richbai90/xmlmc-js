@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>unlockAnalystParams | xmlmc</title>
+	<title>XmlmcResponse | xmlmc</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,30 +56,46 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_types_admintypes_.html">&quot;types/AdminTypes&quot;</a>
+					<a href="../modules/_connection_.html">&quot;Connection&quot;</a>
 				</li>
 				<li>
-					<a href="_types_admintypes_.unlockanalystparams.html">unlockAnalystParams</a>
+					<a href="_connection_.xmlmcresponse.html">XmlmcResponse</a>
 				</li>
 			</ul>
-			<h1>Interface unlockAnalystParams</h1>
+			<h1>Interface XmlmcResponse</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Class represents a server connection.
+							Responsible for maintaining a connection to the server.
+						Ensures that a cookie is saved each time a request is sent and received.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">unlockAnalystParams</span>
+						<span class="target">XmlmcResponse</span>
 					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-kind-interface tsd-parent-kind-external-module">
 				<h3 class="tsd-before-signature">Indexable</h3>
-				<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="../modules/_types_xmlmctypes_.xmlmctypes.html#xmlmcparam" class="tsd-signature-type">XmlmcParam</a></div>
+				<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>index: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></div>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Class represents a server connection.
+							Responsible for maintaining a connection to the server.
+						Ensures that a cookie is saved each time a request is sent and received.</p>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
@@ -88,7 +104,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_admintypes_.unlockanalystparams.html#userid" class="tsd-kind-icon">user<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_connection_.xmlmcresponse.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_connection_.xmlmcresponse.html#params" class="tsd-kind-icon">params</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_connection_.xmlmcresponse.html#status" class="tsd-kind-icon">status</a></li>
 							</ul>
 						</section>
 					</div>
@@ -97,12 +115,40 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="userid" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> user<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">user<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="data" class="tsd-anchor"></a>
+					<h3>data</h3>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/ddfc184/src/types/AdminTypes.ts#L50">types/AdminTypes.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/ddfc184/src/Connection.ts#L22">Connection.ts:22</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="params" class="tsd-anchor"></a>
+					<h3>params</h3>
+					<div class="tsd-signature tsd-kind-icon">params<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/ddfc184/src/Connection.ts#L23">Connection.ts:23</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>index: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="status" class="tsd-anchor"></a>
+					<h3>status</h3>
+					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/ddfc184/src/Connection.ts#L21">Connection.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -115,42 +161,42 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_types_admintypes_.html">"types/<wbr>Admin<wbr>Types"</a>
+						<a href="../modules/_connection_.html">"<wbr>Connection"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_types_admintypes_.addemailroutingruleparams.html" class="tsd-kind-icon">add<wbr>Email<wbr>Routing<wbr>Rule<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_types_admintypes_.deleteemailroutingruleparams.html" class="tsd-kind-icon">delete<wbr>Email<wbr>Routing<wbr>Rule<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_types_admintypes_.getauthenticationparams.html" class="tsd-kind-icon">get<wbr>Authentication<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_types_admintypes_.getserverconfigurationparams.html" class="tsd-kind-icon">get<wbr>Server<wbr>Configuration<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_types_admintypes_.lockanalystparams.html" class="tsd-kind-icon">lock<wbr>Analyst<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_types_admintypes_.setauthenticationparams.html" class="tsd-kind-icon">set<wbr>Authentication<wbr>Params</a>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_connection_.connection.html" class="tsd-kind-icon">Connection</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_types_admintypes_.unlockanalystparams.html" class="tsd-kind-icon">unlock<wbr>Analyst<wbr>Params</a>
+						<a href="_connection_.xmlmcresponse.html" class="tsd-kind-icon">Xmlmc<wbr>Response</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_types_admintypes_.unlockanalystparams.html#userid" class="tsd-kind-icon">user<wbr>Id</a>
+								<a href="_connection_.xmlmcresponse.html#data" class="tsd-kind-icon">data</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_connection_.xmlmcresponse.html#params" class="tsd-kind-icon">params</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_connection_.xmlmcresponse.html#status" class="tsd-kind-icon">status</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_connection_.html#handledataparam" class="tsd-kind-icon">handle<wbr>Data<wbr>Param</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_connection_.html#isiterable" class="tsd-kind-icon">is<wbr>Iterable</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_connection_.html#transformresponse" class="tsd-kind-icon">transform<wbr>Response</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
