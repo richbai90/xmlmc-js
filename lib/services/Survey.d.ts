@@ -1,6 +1,6 @@
 import * as paramTypes from '../types/SurveyTypes';
-import { AxiosError, AxiosResponse } from "axios";
-import { Connection } from '../Connection';
+import { AxiosError } from "axios";
+import { Connection, XmlmcResponse } from '../Connection';
 import Xmlmc from '../XmlMethodCall';
 export declare class Survey {
     private connection;
@@ -8,5 +8,5 @@ export declare class Survey {
     private service;
     private paramMap;
     constructor(connection: Connection, xmlmc: Xmlmc);
-    sendCustomerCallSurvey(surveyId: Object, callref: Object, optionalParams?: paramTypes.sendCustomerCallSurveyParams): Promise<AxiosResponse | AxiosError>;
+    sendCustomerCallSurvey(surveyId: Object, callref: Object, optionalParams?: paramTypes.sendCustomerCallSurveyParams): Promise<XmlmcResponse | AxiosError>;
 }

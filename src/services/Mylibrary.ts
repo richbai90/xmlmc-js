@@ -1,7 +1,7 @@
 import * as paramTypes from '../types/MylibraryTypes'
 import {AxiosError, AxiosResponse} from "axios";
 import {XmlmcParams} from "../types/XmlmcTypes";
-import {Connection} from '../Connection'
+import {Connection, XmlmcResponse} from '../Connection'
 import Xmlmc from '../XmlMethodCall'
 import {Request} from '../Request'
 
@@ -18,52 +18,52 @@ import {Request} from '../Request'
             this.paramMap = new Map([['addUserLibraryResource', ['resource',]], ['createFolder', ['folder',]], ['deleteFile', ['file',]], ['deleteFolder', ['folder', 'forceDelete',]], ['deleteUserLibraryResource', ['name',]], ['getFile', ['path',]], ['getFolder', ['path', 'includeFiles',]], ['getFolderFromPath', ['path', 'includeSubFolders',]], ['putFile', ['path', 'forceOverwrite', 'file',]], ['renameItem', ['path', 'newName',]],]);
         }
 
-        addUserLibraryResource(resource: Object, optionalParams?: paramTypes.addUserLibraryResourceParams): Promise<AxiosResponse | AxiosError> {
+        addUserLibraryResource(resource: Object, optionalParams?: paramTypes.addUserLibraryResourceParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'addUserLibraryResource', <XmlmcParams>Object.assign({}, {resource}, optionalParams || {}), this.paramMap.get('addUserLibraryResource') || []);
             return this.connection.sendRequest(request)
         }
 
-        createFolder(folder: string, optionalParams?: paramTypes.createFolderParams): Promise<AxiosResponse | AxiosError> {
+        createFolder(folder: string, optionalParams?: paramTypes.createFolderParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'createFolder', <XmlmcParams>Object.assign({}, {folder}, optionalParams || {}), this.paramMap.get('createFolder') || []);
             return this.connection.sendRequest(request)
         }
 
-        deleteFile(file: string, optionalParams?: paramTypes.deleteFileParams): Promise<AxiosResponse | AxiosError> {
+        deleteFile(file: string, optionalParams?: paramTypes.deleteFileParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'deleteFile', <XmlmcParams>Object.assign({}, {file}, optionalParams || {}), this.paramMap.get('deleteFile') || []);
             return this.connection.sendRequest(request)
         }
 
-        deleteFolder(folder: string, optionalParams?: paramTypes.deleteFolderParams): Promise<AxiosResponse | AxiosError> {
+        deleteFolder(folder: string, optionalParams?: paramTypes.deleteFolderParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'deleteFolder', <XmlmcParams>Object.assign({}, {folder}, optionalParams || {}), this.paramMap.get('deleteFolder') || []);
             return this.connection.sendRequest(request)
         }
 
-        deleteUserLibraryResource(name: string, optionalParams?: paramTypes.deleteUserLibraryResourceParams): Promise<AxiosResponse | AxiosError> {
+        deleteUserLibraryResource(name: string, optionalParams?: paramTypes.deleteUserLibraryResourceParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'deleteUserLibraryResource', <XmlmcParams>Object.assign({}, {name}, optionalParams || {}), this.paramMap.get('deleteUserLibraryResource') || []);
             return this.connection.sendRequest(request)
         }
 
-        getFile(path: string, optionalParams?: paramTypes.getFileParams): Promise<AxiosResponse | AxiosError> {
+        getFile(path: string, optionalParams?: paramTypes.getFileParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'getFile', <XmlmcParams>Object.assign({}, {path}, optionalParams || {}), this.paramMap.get('getFile') || []);
             return this.connection.sendRequest(request)
         }
 
-        getFolder(optionalParams?: paramTypes.getFolderParams): Promise<AxiosResponse | AxiosError> {
+        getFolder(optionalParams?: paramTypes.getFolderParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'getFolder', <XmlmcParams>(optionalParams || {}), this.paramMap.get('getFolder') || []);
             return this.connection.sendRequest(request)
         }
 
-        getFolderFromPath(optionalParams?: paramTypes.getFolderFromPathParams): Promise<AxiosResponse | AxiosError> {
+        getFolderFromPath(optionalParams?: paramTypes.getFolderFromPathParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'getFolderFromPath', <XmlmcParams>(optionalParams || {}), this.paramMap.get('getFolderFromPath') || []);
             return this.connection.sendRequest(request)
         }
 
-        getUserLibraryResources(optionalParams?: paramTypes.getUserLibraryResourcesParams): Promise<AxiosResponse | AxiosError> {
+        getUserLibraryResources(optionalParams?: paramTypes.getUserLibraryResourcesParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'getUserLibraryResources', <XmlmcParams>(optionalParams || {}), this.paramMap.get('getUserLibraryResources') || []);
             return this.connection.sendRequest(request)
         }
 
-        putFile(path: string, file: Object, optionalParams?: paramTypes.putFileParams): Promise<AxiosResponse | AxiosError> {
+        putFile(path: string, file: Object, optionalParams?: paramTypes.putFileParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'putFile', <XmlmcParams>Object.assign({}, {
                 path,
                 file
@@ -71,7 +71,7 @@ import {Request} from '../Request'
             return this.connection.sendRequest(request)
         }
 
-        renameItem(path: string, newName: string, optionalParams?: paramTypes.renameItemParams): Promise<AxiosResponse | AxiosError> {
+        renameItem(path: string, newName: string, optionalParams?: paramTypes.renameItemParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'renameItem', <XmlmcParams>Object.assign({}, {
                 path,
                 newName

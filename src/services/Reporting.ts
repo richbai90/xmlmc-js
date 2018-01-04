@@ -1,7 +1,7 @@
 import * as paramTypes from '../types/ReportingTypes'
 import {AxiosError, AxiosResponse} from "axios";
 import {XmlmcParams} from "../types/XmlmcTypes";
-import {Connection} from '../Connection'
+import {Connection, XmlmcResponse} from '../Connection'
 import Xmlmc from '../XmlMethodCall'
 import {Request} from '../Request'
 
@@ -18,12 +18,12 @@ import {Request} from '../Request'
             this.paramMap = new Map([['getCustomReportTree', ['folderPath', 'recursive',]], ['getSystemReportTree', ['folderID', 'recursive',]],]);
         }
 
-        getCustomReportTree(optionalParams?: paramTypes.getCustomReportTreeParams): Promise<AxiosResponse | AxiosError> {
+        getCustomReportTree(optionalParams?: paramTypes.getCustomReportTreeParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'getCustomReportTree', <XmlmcParams>(optionalParams || {}), this.paramMap.get('getCustomReportTree') || []);
             return this.connection.sendRequest(request)
         }
 
-        getSystemReportTree(optionalParams?: paramTypes.getSystemReportTreeParams): Promise<AxiosResponse | AxiosError> {
+        getSystemReportTree(optionalParams?: paramTypes.getSystemReportTreeParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'getSystemReportTree', <XmlmcParams>(optionalParams || {}), this.paramMap.get('getSystemReportTree') || []);
             return this.connection.sendRequest(request)
         }

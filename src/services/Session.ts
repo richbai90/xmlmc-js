@@ -1,7 +1,7 @@
 import * as paramTypes from '../types/SessionTypes'
 import {AxiosError, AxiosResponse} from "axios";
 import {XmlmcParams} from "../types/XmlmcTypes";
-import {Connection} from '../Connection'
+import {Connection, XmlmcResponse} from '../Connection'
 import Xmlmc from '../XmlMethodCall'
 import {Request} from '../Request'
 
@@ -19,12 +19,12 @@ import {Request} from '../Request'
             this.paramMap = new Map([['analystLogoff', ['sessionId',]], ['analystLogon', ['userId', 'password',]], ['analystLogonTrust', ['userId', 'secretKey',]], ['bindSession', ['sessionId',]], ['changePassword', ['oldPassword', 'newPassword',]], ['convertDateTimeInText', ['inputText',]], ['getSessionInfo', ['sessionId',]], ['getSessionInfo2', ['sessionId',]], ['hasRight', ['userRight',]], ['isSessionValid', ['sessionId',]], ['lockCustomerAccount', ['selfServiceInstance', 'customerId', 'permanent', 'duration',]], ['selfServiceLogon', ['selfServiceInstance', 'customerId', 'password',]], ['setDatabaseRight', ['tableName', 'rightFlag', 'rightAllowed',]], ['setOutputValidation', ['validateResultMessage',]], ['setUserRight', ['rightClass', 'rightFlag', 'rightAllowed',]], ['setVariable', ['sessionVariable',]], ['switchAnalystContext', ['groupId', 'analystId',]], ['unlockCustomerAccount', ['selfServiceInstance', 'customerId',]],]);
         }
 
-        analystLogoff(optionalParams?: paramTypes.analystLogoffParams): Promise<AxiosResponse | AxiosError> {
+        analystLogoff(optionalParams?: paramTypes.analystLogoffParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'analystLogoff', <XmlmcParams>(optionalParams || {}), this.paramMap.get('analystLogoff') || []);
             return this.connection.sendRequest(request)
         }
 
-        analystLogon(userId: string, password: string, optionalParams?: paramTypes.analystLogonParams): Promise<AxiosResponse | AxiosError> {
+        analystLogon(userId: string, password: string, optionalParams?: paramTypes.analystLogonParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'analystLogon', <XmlmcParams>Object.assign({}, {
                 userId,
                 password
@@ -32,7 +32,7 @@ import {Request} from '../Request'
             return this.connection.sendRequest(request)
         }
 
-        analystLogonTrust(userId: string, secretKey: string, optionalParams?: paramTypes.analystLogonTrustParams): Promise<AxiosResponse | AxiosError> {
+        analystLogonTrust(userId: string, secretKey: string, optionalParams?: paramTypes.analystLogonTrustParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'analystLogonTrust', <XmlmcParams>Object.assign({}, {
                 userId,
                 secretKey
@@ -40,12 +40,12 @@ import {Request} from '../Request'
             return this.connection.sendRequest(request)
         }
 
-        bindSession(sessionId: string, optionalParams?: paramTypes.bindSessionParams): Promise<AxiosResponse | AxiosError> {
+        bindSession(sessionId: string, optionalParams?: paramTypes.bindSessionParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'bindSession', <XmlmcParams>Object.assign({}, {sessionId}, optionalParams || {}), this.paramMap.get('bindSession') || []);
             return this.connection.sendRequest(request)
         }
 
-        changePassword(oldPassword: string, newPassword: string, optionalParams?: paramTypes.changePasswordParams): Promise<AxiosResponse | AxiosError> {
+        changePassword(oldPassword: string, newPassword: string, optionalParams?: paramTypes.changePasswordParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'changePassword', <XmlmcParams>Object.assign({}, {
                 oldPassword,
                 newPassword
@@ -53,47 +53,47 @@ import {Request} from '../Request'
             return this.connection.sendRequest(request)
         }
 
-        closeLocalSession(optionalParams?: paramTypes.closeLocalSessionParams): Promise<AxiosResponse | AxiosError> {
+        closeLocalSession(optionalParams?: paramTypes.closeLocalSessionParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'closeLocalSession', <XmlmcParams>(optionalParams || {}), this.paramMap.get('closeLocalSession') || []);
             return this.connection.sendRequest(request)
         }
 
-        convertDateTimeInText(inputText: string, optionalParams?: paramTypes.convertDateTimeInTextParams): Promise<AxiosResponse | AxiosError> {
+        convertDateTimeInText(inputText: string, optionalParams?: paramTypes.convertDateTimeInTextParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'convertDateTimeInText', <XmlmcParams>Object.assign({}, {inputText}, optionalParams || {}), this.paramMap.get('convertDateTimeInText') || []);
             return this.connection.sendRequest(request)
         }
 
-        createLocalSession(optionalParams?: paramTypes.createLocalSessionParams): Promise<AxiosResponse | AxiosError> {
+        createLocalSession(optionalParams?: paramTypes.createLocalSessionParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'createLocalSession', <XmlmcParams>(optionalParams || {}), this.paramMap.get('createLocalSession') || []);
             return this.connection.sendRequest(request)
         }
 
-        getSessionDDInfo(optionalParams?: paramTypes.getSessionDDInfoParams): Promise<AxiosResponse | AxiosError> {
+        getSessionDDInfo(optionalParams?: paramTypes.getSessionDDInfoParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'getSessionDDInfo', <XmlmcParams>(optionalParams || {}), this.paramMap.get('getSessionDDInfo') || []);
             return this.connection.sendRequest(request)
         }
 
-        getSessionInfo(optionalParams?: paramTypes.getSessionInfoParams): Promise<AxiosResponse | AxiosError> {
+        getSessionInfo(optionalParams?: paramTypes.getSessionInfoParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'getSessionInfo', <XmlmcParams>(optionalParams || {}), this.paramMap.get('getSessionInfo') || []);
             return this.connection.sendRequest(request)
         }
 
-        getSessionInfo2(optionalParams?: paramTypes.getSessionInfo2Params): Promise<AxiosResponse | AxiosError> {
+        getSessionInfo2(optionalParams?: paramTypes.getSessionInfo2Params): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'getSessionInfo2', <XmlmcParams>(optionalParams || {}), this.paramMap.get('getSessionInfo2') || []);
             return this.connection.sendRequest(request)
         }
 
-        hasRight(userRight: string, optionalParams?: paramTypes.hasRightParams): Promise<AxiosResponse | AxiosError> {
+        hasRight(userRight: string, optionalParams?: paramTypes.hasRightParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'hasRight', <XmlmcParams>Object.assign({}, {userRight}, optionalParams || {}), this.paramMap.get('hasRight') || []);
             return this.connection.sendRequest(request)
         }
 
-        isSessionValid(optionalParams?: paramTypes.isSessionValidParams): Promise<AxiosResponse | AxiosError> {
+        isSessionValid(optionalParams?: paramTypes.isSessionValidParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'isSessionValid', <XmlmcParams>(optionalParams || {}), this.paramMap.get('isSessionValid') || []);
             return this.connection.sendRequest(request)
         }
 
-        lockCustomerAccount(selfServiceInstance: string, customerId: string, permanent: boolean, optionalParams?: paramTypes.lockCustomerAccountParams): Promise<AxiosResponse | AxiosError> {
+        lockCustomerAccount(selfServiceInstance: string, customerId: string, permanent: boolean, optionalParams?: paramTypes.lockCustomerAccountParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'lockCustomerAccount', <XmlmcParams>Object.assign({}, {
                 selfServiceInstance,
                 customerId,
@@ -102,12 +102,12 @@ import {Request} from '../Request'
             return this.connection.sendRequest(request)
         }
 
-        selfServiceLogoff(optionalParams?: paramTypes.selfServiceLogoffParams): Promise<AxiosResponse | AxiosError> {
+        selfServiceLogoff(optionalParams?: paramTypes.selfServiceLogoffParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'selfServiceLogoff', <XmlmcParams>(optionalParams || {}), this.paramMap.get('selfServiceLogoff') || []);
             return this.connection.sendRequest(request)
         }
 
-        selfServiceLogon(selfServiceInstance: string, customerId: string, password: string, optionalParams?: paramTypes.selfServiceLogonParams): Promise<AxiosResponse | AxiosError> {
+        selfServiceLogon(selfServiceInstance: string, customerId: string, password: string, optionalParams?: paramTypes.selfServiceLogonParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'selfServiceLogon', <XmlmcParams>Object.assign({}, {
                 selfServiceInstance,
                 customerId,
@@ -116,7 +116,7 @@ import {Request} from '../Request'
             return this.connection.sendRequest(request)
         }
 
-        setDatabaseRight(tableName: string, rightFlag: number, rightAllowed: boolean, optionalParams?: paramTypes.setDatabaseRightParams): Promise<AxiosResponse | AxiosError> {
+        setDatabaseRight(tableName: string, rightFlag: number, rightAllowed: boolean, optionalParams?: paramTypes.setDatabaseRightParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'setDatabaseRight', <XmlmcParams>Object.assign({}, {
                 tableName,
                 rightFlag,
@@ -125,12 +125,12 @@ import {Request} from '../Request'
             return this.connection.sendRequest(request)
         }
 
-        setOutputValidation(validateResultMessage: boolean, optionalParams?: paramTypes.setOutputValidationParams): Promise<AxiosResponse | AxiosError> {
+        setOutputValidation(validateResultMessage: boolean, optionalParams?: paramTypes.setOutputValidationParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'setOutputValidation', <XmlmcParams>Object.assign({}, {validateResultMessage}, optionalParams || {}), this.paramMap.get('setOutputValidation') || []);
             return this.connection.sendRequest(request)
         }
 
-        setUserRight(rightClass: string, rightFlag: number, rightAllowed: boolean, optionalParams?: paramTypes.setUserRightParams): Promise<AxiosResponse | AxiosError> {
+        setUserRight(rightClass: string, rightFlag: number, rightAllowed: boolean, optionalParams?: paramTypes.setUserRightParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'setUserRight', <XmlmcParams>Object.assign({}, {
                 rightClass,
                 rightFlag,
@@ -139,17 +139,17 @@ import {Request} from '../Request'
             return this.connection.sendRequest(request)
         }
 
-        setVariable(sessionVariable: Object, optionalParams?: paramTypes.setVariableParams): Promise<AxiosResponse | AxiosError> {
+        setVariable(sessionVariable: Object, optionalParams?: paramTypes.setVariableParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'setVariable', <XmlmcParams>Object.assign({}, {sessionVariable}, optionalParams || {}), this.paramMap.get('setVariable') || []);
             return this.connection.sendRequest(request)
         }
 
-        switchAnalystContext(groupId: string, optionalParams?: paramTypes.switchAnalystContextParams): Promise<AxiosResponse | AxiosError> {
+        switchAnalystContext(groupId: string, optionalParams?: paramTypes.switchAnalystContextParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'switchAnalystContext', <XmlmcParams>Object.assign({}, {groupId}, optionalParams || {}), this.paramMap.get('switchAnalystContext') || []);
             return this.connection.sendRequest(request)
         }
 
-        unlockCustomerAccount(selfServiceInstance: string, customerId: string, optionalParams?: paramTypes.unlockCustomerAccountParams): Promise<AxiosResponse | AxiosError> {
+        unlockCustomerAccount(selfServiceInstance: string, customerId: string, optionalParams?: paramTypes.unlockCustomerAccountParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'unlockCustomerAccount', <XmlmcParams>Object.assign({}, {
                 selfServiceInstance,
                 customerId

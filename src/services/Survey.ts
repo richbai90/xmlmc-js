@@ -1,7 +1,7 @@
 import * as paramTypes from '../types/SurveyTypes'
 import {AxiosError, AxiosResponse} from "axios";
 import {XmlmcParams} from "../types/XmlmcTypes";
-import {Connection} from '../Connection'
+import {Connection, XmlmcResponse} from '../Connection'
 import Xmlmc from '../XmlMethodCall'
 import {Request} from '../Request'
 
@@ -18,7 +18,7 @@ import {Request} from '../Request'
             this.paramMap = new Map([['sendCustomerCallSurvey', ['surveyId', 'callref',]],]);
         }
 
-        sendCustomerCallSurvey(surveyId: Object, callref: Object, optionalParams?: paramTypes.sendCustomerCallSurveyParams): Promise<AxiosResponse | AxiosError> {
+        sendCustomerCallSurvey(surveyId: Object, callref: Object, optionalParams?: paramTypes.sendCustomerCallSurveyParams): Promise<XmlmcResponse | AxiosError> {
             let request = new Request(this.service, 'sendCustomerCallSurvey', <XmlmcParams>Object.assign({}, {
                 surveyId,
                 callref
