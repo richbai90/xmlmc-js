@@ -1,4 +1,4 @@
-import { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
+import { AxiosInstance } from 'axios';
 import { Request } from "./Request";
 import { CookieJar } from "tough-cookie";
 /**
@@ -48,6 +48,6 @@ export declare class Connection {
      * @returns {Promise.<Response>}
      * @throws Module importing error. Occurs if for some reason we were unable to require the underlying modules. Indicates a problem with the library, not the developer.
      */
-    sendRequest(xmlmc: Request): Promise<AxiosResponse['data'] | AxiosError>;
+    sendRequest(xmlmc: Request): Promise<XmlmcResponse>;
     private _setupCookieJar(jar, axiosCookieJar);
 }

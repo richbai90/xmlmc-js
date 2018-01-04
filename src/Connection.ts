@@ -91,8 +91,8 @@ export class Connection {
      * @returns {Promise.<Response>}
      * @throws Module importing error. Occurs if for some reason we were unable to require the underlying modules. Indicates a problem with the library, not the developer.
      */
-    async sendRequest(xmlmc: Request): Promise<AxiosResponse['data'] | AxiosError> {
-        return new Promise((resolve, reject) => {
+    async sendRequest(xmlmc: Request): Promise<XmlmcResponse> {
+        return new Promise<XmlmcResponse>((resolve, reject) => {
             const post: string = this.port === 80 || this.https ? '/xmlmc/' : '/sw';
             this.endpoint.post(post, xmlmc.toString()).then((response: AxiosResponse) => {
                 response.data.status ? resolve(<XmlmcResponse>response.data) : reject(response.data);

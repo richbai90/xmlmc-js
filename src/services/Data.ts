@@ -19,12 +19,12 @@ import {Request} from '../Request'
             this.paramMap = new Map([['addRecord', ['table', 'returnModifiedData',]], ['deleteRecord', ['table', 'keyValue',]], ['getColumnInfoList', ['database', 'table',]], ['getRecord', ['database', 'table', 'keyValue', 'formatValues', 'returnMeta', 'returnRawValues',]], ['getStoredQueryList', ['folder',]], ['getTableInfoList', ['database',]], ['invokeStoredQuery', ['storedQuery', 'parameters',]], ['runDataImport', ['confFileName', 'dataFileName',]], ['sqlQuery', ['database', 'query', 'rowOffset', 'rowCount', 'formatValues', 'returnMeta', 'maxResults', 'returnRawValues',]], ['updateRecord', ['table', 'returnModifiedData',]],]);
         }
 
-        addRecord(table: string, optionalParams?: paramTypes.addRecordParams): Promise<XmlmcResponse | AxiosError> {
+        addRecord(table: string, optionalParams?: paramTypes.addRecordParams): Promise<XmlmcResponse> {
             let request = new Request(this.service, 'addRecord', <XmlmcParams>Object.assign({}, {table}, optionalParams || {}), this.paramMap.get('addRecord') || []);
             return this.connection.sendRequest(request)
         }
 
-        deleteRecord(table: string, keyValue: string, optionalParams?: paramTypes.deleteRecordParams): Promise<XmlmcResponse | AxiosError> {
+        deleteRecord(table: string, keyValue: string, optionalParams?: paramTypes.deleteRecordParams): Promise<XmlmcResponse> {
             let request = new Request(this.service, 'deleteRecord', <XmlmcParams>Object.assign({}, {
                 table,
                 keyValue
@@ -32,7 +32,7 @@ import {Request} from '../Request'
             return this.connection.sendRequest(request)
         }
 
-        getColumnInfoList(database: string, table: string, optionalParams?: paramTypes.getColumnInfoListParams): Promise<XmlmcResponse | AxiosError> {
+        getColumnInfoList(database: string, table: string, optionalParams?: paramTypes.getColumnInfoListParams): Promise<XmlmcResponse> {
             let request = new Request(this.service, 'getColumnInfoList', <XmlmcParams>Object.assign({}, {
                 database,
                 table
@@ -40,7 +40,7 @@ import {Request} from '../Request'
             return this.connection.sendRequest(request)
         }
 
-        getRecord(table: string, keyValue: string, optionalParams?: paramTypes.getRecordParams): Promise<XmlmcResponse | AxiosError> {
+        getRecord(table: string, keyValue: string, optionalParams?: paramTypes.getRecordParams): Promise<XmlmcResponse> {
             let request = new Request(this.service, 'getRecord', <XmlmcParams>Object.assign({}, {
                 table,
                 keyValue
@@ -48,22 +48,22 @@ import {Request} from '../Request'
             return this.connection.sendRequest(request)
         }
 
-        getStoredQueryList(optionalParams?: paramTypes.getStoredQueryListParams): Promise<XmlmcResponse | AxiosError> {
+        getStoredQueryList(optionalParams?: paramTypes.getStoredQueryListParams): Promise<XmlmcResponse> {
             let request = new Request(this.service, 'getStoredQueryList', <XmlmcParams>(optionalParams || {}), this.paramMap.get('getStoredQueryList') || []);
             return this.connection.sendRequest(request)
         }
 
-        getTableInfoList(database: string, optionalParams?: paramTypes.getTableInfoListParams): Promise<XmlmcResponse | AxiosError> {
+        getTableInfoList(database: string, optionalParams?: paramTypes.getTableInfoListParams): Promise<XmlmcResponse> {
             let request = new Request(this.service, 'getTableInfoList', <XmlmcParams>Object.assign({}, {database}, optionalParams || {}), this.paramMap.get('getTableInfoList') || []);
             return this.connection.sendRequest(request)
         }
 
-        invokeStoredQuery(storedQuery: string, optionalParams?: paramTypes.invokeStoredQueryParams): Promise<XmlmcResponse | AxiosError> {
+        invokeStoredQuery(storedQuery: string, optionalParams?: paramTypes.invokeStoredQueryParams): Promise<XmlmcResponse> {
             let request = new Request(this.service, 'invokeStoredQuery', <XmlmcParams>Object.assign({}, {storedQuery}, optionalParams || {}), this.paramMap.get('invokeStoredQuery') || []);
             return this.connection.sendRequest(request)
         }
 
-        runDataImport(confFileName: string, dataFileName: string, optionalParams?: paramTypes.runDataImportParams): Promise<XmlmcResponse | AxiosError> {
+        runDataImport(confFileName: string, dataFileName: string, optionalParams?: paramTypes.runDataImportParams): Promise<XmlmcResponse> {
             let request = new Request(this.service, 'runDataImport', <XmlmcParams>Object.assign({}, {
                 confFileName,
                 dataFileName
@@ -71,7 +71,7 @@ import {Request} from '../Request'
             return this.connection.sendRequest(request)
         }
 
-        sqlQuery(database: string, query: string, optionalParams?: paramTypes.sqlQueryParams): Promise<XmlmcResponse | AxiosError> {
+        sqlQuery(database: string, query: string, optionalParams?: paramTypes.sqlQueryParams): Promise<XmlmcResponse> {
             let request = new Request(this.service, 'sqlQuery', <XmlmcParams>Object.assign({}, {
                 database,
                 query
@@ -79,7 +79,7 @@ import {Request} from '../Request'
             return this.connection.sendRequest(request)
         }
 
-        updateRecord(table: string, optionalParams?: paramTypes.updateRecordParams): Promise<XmlmcResponse | AxiosError> {
+        updateRecord(table: string, optionalParams?: paramTypes.updateRecordParams): Promise<XmlmcResponse> {
             let request = new Request(this.service, 'updateRecord', <XmlmcParams>Object.assign({}, {table}, optionalParams || {}), this.paramMap.get('updateRecord') || []);
             return this.connection.sendRequest(request)
         }

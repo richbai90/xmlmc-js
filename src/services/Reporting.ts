@@ -18,12 +18,12 @@ import {Request} from '../Request'
             this.paramMap = new Map([['getCustomReportTree', ['folderPath', 'recursive',]], ['getSystemReportTree', ['folderID', 'recursive',]],]);
         }
 
-        getCustomReportTree(optionalParams?: paramTypes.getCustomReportTreeParams): Promise<XmlmcResponse | AxiosError> {
+        getCustomReportTree(optionalParams?: paramTypes.getCustomReportTreeParams): Promise<XmlmcResponse> {
             let request = new Request(this.service, 'getCustomReportTree', <XmlmcParams>(optionalParams || {}), this.paramMap.get('getCustomReportTree') || []);
             return this.connection.sendRequest(request)
         }
 
-        getSystemReportTree(optionalParams?: paramTypes.getSystemReportTreeParams): Promise<XmlmcResponse | AxiosError> {
+        getSystemReportTree(optionalParams?: paramTypes.getSystemReportTreeParams): Promise<XmlmcResponse> {
             let request = new Request(this.service, 'getSystemReportTree', <XmlmcParams>(optionalParams || {}), this.paramMap.get('getSystemReportTree') || []);
             return this.connection.sendRequest(request)
         }
