@@ -11,6 +11,16 @@ import { CookieJar } from "tough-cookie";
  * Responsible for maintaining a connection to the server.
  * Ensures that a cookie is saved each time a request is sent and received.
  */
+export interface XmlmcResponse {
+    [index: string]: any;
+    status: boolean;
+    data: Array<{
+        [index: string]: string;
+    }>;
+    params: {
+        [index: string]: string;
+    };
+}
 export declare class Connection {
     protected server: string;
     protected port: number;

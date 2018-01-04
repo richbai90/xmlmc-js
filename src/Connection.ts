@@ -16,6 +16,13 @@ import axiosCookieJarSupport = require('@3846masa/axios-cookiejar-support');
  */
 
 
+export interface XmlmcResponse {
+    [index : string] : any;
+    status: boolean;
+    data: Array<{[index : string] : string}>;
+    params: {[index : string] : string};
+}
+
 export class Connection {
 
     protected server: string;
@@ -88,7 +95,7 @@ export class Connection {
         return new Promise((resolve, reject) => {
             const post: string = this.port === 80 || this.https ? '/xmlmc/' : '/sw';
             this.endpoint.post(post, xmlmc.toString()).then((response: AxiosResponse) => {
-                response.data.status ? resolve(response.data) : reject(response.data);
+                response.data.status ? resolve(<XmlmcResponse>response.data) : reject(response.data);
             }).catch((err: AxiosError) => {
                 reject(err);
             });
