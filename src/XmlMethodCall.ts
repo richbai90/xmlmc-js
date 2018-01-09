@@ -9,6 +9,7 @@ import {Reporting} from "./services/Reporting";
 import {Selfservice} from "./services/Selfservice";
 import {Survey} from "./services/Survey";
 import {System} from "./services/System";
+import URL = require('url-parse')
 
 export type XmlmcOptions = {
     data?: {
@@ -37,9 +38,11 @@ export default class XmlMethodCall {
 
     constructor(server: string = 'localhost', port?: number, opts?: XmlmcOptions) {
         if (server.match(/^(http:\/\/)/)) {
+            server = URL(server).host;
             port = 80
         } else {
             port = server.match(/^(https:\/\/)/) ? 443 : port || 5015;
+            server = port === 443 ? URL(server).host : server;
         }
 
         const defaultOpts: XmlmcOptions = {

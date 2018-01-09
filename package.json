@@ -1,6 +1,6 @@
 {
   "name": "xmlmc",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Wrapper for Hornbill Supportworks XMLMC API",
   "main": "index.js",
   "scripts": {
@@ -25,11 +25,13 @@
   "dependencies": {
     "@3846masa/axios-cookiejar-support": "^0.1.2",
     "@types/tough-cookie": "^2.3.2",
+    "@types/url-parse": "^1.1.0",
     "@types/xmlbuilder": "^0.0.32",
     "axios": "^0.17.0",
     "lodash": "^4.17.4",
     "sqlstring": "^2.3.0",
     "tough-cookie": "^2.3.3",
+    "url-parse": "^1.2.0",
     "xmlbuilder": "^9.0.4"
   },
   "devDependencies": {
