@@ -15,10 +15,10 @@ export interface XmlmcResponse {
     [index: string]: any;
     status: boolean;
     data: Array<{
-        [index: string]: string;
+        [index: string]: any;
     }>;
     params: {
-        [index: string]: string;
+        [index: string]: any;
     };
 }
 export declare class Connection {

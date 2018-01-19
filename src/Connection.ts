@@ -19,8 +19,8 @@ import axiosCookieJarSupport = require('@3846masa/axios-cookiejar-support');
 export interface XmlmcResponse {
     [index : string] : any;
     status: boolean;
-    data: Array<{[index : string] : string}>;
-    params: {[index : string] : string};
+    data: Array<{[index : string] : any}>;
+    params: {[index : string] : any};
 }
 
 export class Connection {
