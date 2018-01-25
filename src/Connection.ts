@@ -17,11 +17,13 @@ import axiosCookieJarSupport = require('@3846masa/axios-cookiejar-support');
 
 
 export interface XmlmcResponse {
-    [index : string] : any;
+    [index: string]: any;
+
     status: boolean;
-    data: Array<{[index : string] : any}>;
-    params: {[index : string] : any};
+    data: Array<{ [index: string]: any }>;
+    params: { [index: string]: any };
 }
+
 
 export class Connection {
 
@@ -41,12 +43,7 @@ export class Connection {
         this.server = server;
         this.port = port;
         this.https = false;
-        this.storeCookies = typeof window === 'undefined';
-        if (this.storeCookies) {
-            this._setupCookieJar(new CookieJar(), axiosCookieJarSupport);
-        } else {
-            this._connect(server, port);
-        }
+        this._setupCookieJar(new CookieJar(), axiosCookieJarSupport);
     }
 
     /**
