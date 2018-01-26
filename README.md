@@ -1,7 +1,6 @@
 # xmlmc-js
 
-A javascript wrapper for the Supportworks XMLMC API. Currently still in beta stage.
-To use run
+A javascript wrapper for the Supportworks XMLMC API. To use run
 
 ```js
 npm install xmlmc
@@ -11,10 +10,12 @@ const Xmlmc = require('xmlmc');
 
 
 ## Usage
-The package is built for a node server. To use in a web browser, you will need to 
-use a bundler like Webpack. Below is an example of using the package in a node environment.
+The package is isomorphic. To use with webpack or browserify, just require it in your script as you normally would.
+To use it in a strictly browser environment, just use the minified code in dist/browser. The code will support browsers
+>= firefox 52 and IE 10 / node >= 6.10
 
 ```js
+import Xmlmc from 'xmlmc'
 const xmlmc = new Xmlmc('https://devserver.local');
 xmlmc.session.analystLogon('admin', 'password').then(() => {
     ...
