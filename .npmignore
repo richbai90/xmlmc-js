@@ -3,3 +3,8 @@ src
 tsconfig.json
 .babelrc
 docs
+webpack.config.js
+yarn.lock
+.idea
+.gitignore
+
