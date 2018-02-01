@@ -1,12 +1,12 @@
 import * as paramTypes from '../../types/AdminTypes';
 import { Connection, XmlmcResponse } from '../Connection';
-import Xmlmc from '..';
+import { XmlMethodCall } from '..';
 export declare class Admin {
     private connection;
     private xmlmc;
     private service;
     private paramMap;
-    constructor(connection: Connection, xmlmc: Xmlmc);
+    constructor(connection: Connection, xmlmc: XmlMethodCall);
     addEmailRoutingRule(condition: string, optionalParams?: paramTypes.addEmailRoutingRuleParams): Promise<XmlmcResponse>;
     deleteEmailRoutingRule(condition: string, optionalParams?: paramTypes.deleteEmailRoutingRuleParams): Promise<XmlmcResponse>;
     getAuthentication(userId: string, optionalParams?: paramTypes.getAuthenticationParams): Promise<XmlmcResponse>;

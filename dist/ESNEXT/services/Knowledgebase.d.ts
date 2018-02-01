@@ -1,12 +1,12 @@
 import * as paramTypes from '../types/KnowledgebaseTypes';
 import { Connection, XmlmcResponse } from '../Connection';
-import Xmlmc from '..';
+import { XmlMethodCall } from '..';
 export declare class Knowledgebase {
     private connection;
     private xmlmc;
     private service;
     private paramMap;
-    constructor(connection: Connection, xmlmc: Xmlmc);
+    constructor(connection: Connection, xmlmc: XmlMethodCall);
     articleAdd(title: string, docVisibleToCustomers: boolean, docStatus: Object, catalogId: Object, optionalParams?: paramTypes.articleAddParams): Promise<XmlmcResponse>;
     articleDelete(docRef: string, optionalParams?: paramTypes.articleDeleteParams): Promise<XmlmcResponse>;
     articleUpdate(docRef: string, optionalParams?: paramTypes.articleUpdateParams): Promise<XmlmcResponse>;

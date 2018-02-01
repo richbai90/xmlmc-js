@@ -1,12 +1,12 @@
 import * as paramTypes from '../../types/SessionTypes';
 import { Connection, XmlmcResponse } from '../Connection';
-import Xmlmc from '..';
+import { XmlMethodCall } from '..';
 export declare class Session {
     private connection;
     private xmlmc;
     private service;
     private paramMap;
-    constructor(connection: Connection, xmlmc: Xmlmc);
+    constructor(connection: Connection, xmlmc: XmlMethodCall);
     analystLogoff(optionalParams?: paramTypes.analystLogoffParams): Promise<XmlmcResponse>;
     analystLogon(userId: string, password: string, optionalParams?: paramTypes.analystLogonParams): Promise<XmlmcResponse>;
     analystLogonTrust(userId: string, secretKey: string, optionalParams?: paramTypes.analystLogonTrustParams): Promise<XmlmcResponse>;

@@ -22,7 +22,7 @@ export type XmlmcOptions = {
 
 }
 
-export default class XmlMethodCall {
+export class XmlMethodCall {
     protected connection: Connection;
     opts: XmlmcOptions;
     session: Session;

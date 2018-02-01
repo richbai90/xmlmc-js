@@ -2,17 +2,17 @@ import * as paramTypes from '../types/DataTypes'
 import {AxiosError, AxiosResponse} from "axios";
 import {XmlmcParams} from "../types/XmlmcTypes";
 import {Connection, XmlmcResponse} from '../Connection'
-import Xmlmc from '..'
+import {XmlMethodCall} from '..'
 import {Request} from '../Request'
 
 
     export class Data {
         private connection: Connection;
-        private xmlmc: Xmlmc;
+        private xmlmc: XmlMethodCall;
         private service: string;
         private paramMap: Map<string, Array<string>>;
 
-        constructor(connection: Connection, xmlmc: Xmlmc) {
+        constructor(connection: Connection, xmlmc: XmlMethodCall) {
             this.connection = connection;
             this.xmlmc = xmlmc;
             this.service = 'data';

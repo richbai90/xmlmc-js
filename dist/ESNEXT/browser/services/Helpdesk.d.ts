@@ -1,12 +1,12 @@
 import * as paramTypes from '../../types/HelpdeskTypes';
 import { Connection, XmlmcResponse } from '../Connection';
-import Xmlmc from '..';
+import { XmlMethodCall } from '..';
 export declare class Helpdesk {
     private connection;
     private xmlmc;
     private service;
     private paramMap;
-    constructor(connection: Connection, xmlmc: Xmlmc);
+    constructor(connection: Connection, xmlmc: XmlMethodCall);
     acceptCalls(callref: number, optionalParams?: paramTypes.acceptCallsParams): Promise<XmlmcResponse>;
     addCallWorkItem(callref: number, parentGroup: string, description: string, time: number, assignToGroup: string, actionBy: number, priority: string, type: string, optionalParams?: paramTypes.addCallWorkItemParams): Promise<XmlmcResponse>;
     addCallWorkList(WorkListName: string, callref: number, optionalParams?: paramTypes.addCallWorkListParams): Promise<XmlmcResponse>;

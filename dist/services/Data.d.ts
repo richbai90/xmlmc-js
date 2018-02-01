@@ -1,12 +1,12 @@
 import * as paramTypes from '../types/DataTypes';
 import { Connection, XmlmcResponse } from '../Connection';
-import Xmlmc from '..';
+import { XmlMethodCall } from '..';
 export declare class Data {
     private connection;
     private xmlmc;
     private service;
     private paramMap;
-    constructor(connection: Connection, xmlmc: Xmlmc);
+    constructor(connection: Connection, xmlmc: XmlMethodCall);
     addRecord(table: string, optionalParams?: paramTypes.addRecordParams): Promise<XmlmcResponse>;
     deleteRecord(table: string, keyValue: string, optionalParams?: paramTypes.deleteRecordParams): Promise<XmlmcResponse>;
     getColumnInfoList(database: string, table: string, optionalParams?: paramTypes.getColumnInfoListParams): Promise<XmlmcResponse>;

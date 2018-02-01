@@ -17,7 +17,7 @@ export declare type XmlmcOptions = {
         returnModifiedData?: boolean;
     };
 };
-export default class XmlMethodCall {
+export declare class XmlMethodCall {
     protected connection: Connection;
     opts: XmlmcOptions;
     session: Session;

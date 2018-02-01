@@ -1,12 +1,12 @@
 import * as paramTypes from '../../types/SystemTypes';
 import { Connection, XmlmcResponse } from '../Connection';
-import Xmlmc from '..';
+import { XmlMethodCall } from '..';
 export declare class System {
     private connection;
     private xmlmc;
     private service;
     private paramMap;
-    constructor(connection: Connection, xmlmc: Xmlmc);
+    constructor(connection: Connection, xmlmc: XmlMethodCall);
     getFileTypeRestriction(optionalParams?: paramTypes.getFileTypeRestrictionParams): Promise<XmlmcResponse>;
     getSystemInfo(optionalParams?: paramTypes.getSystemInfoParams): Promise<XmlmcResponse>;
     getTimezoneDetails(optionalParams?: paramTypes.getTimezoneDetailsParams): Promise<XmlmcResponse>;

@@ -1,12 +1,12 @@
 import * as paramTypes from '../../types/MylibraryTypes';
 import { Connection, XmlmcResponse } from '../Connection';
-import Xmlmc from '..';
+import { XmlMethodCall } from '..';
 export declare class Mylibrary {
     private connection;
     private xmlmc;
     private service;
     private paramMap;
-    constructor(connection: Connection, xmlmc: Xmlmc);
+    constructor(connection: Connection, xmlmc: XmlMethodCall);
     addUserLibraryResource(resource: Object, optionalParams?: paramTypes.addUserLibraryResourceParams): Promise<XmlmcResponse>;
     createFolder(folder: string, optionalParams?: paramTypes.createFolderParams): Promise<XmlmcResponse>;
     deleteFile(file: string, optionalParams?: paramTypes.deleteFileParams): Promise<XmlmcResponse>;

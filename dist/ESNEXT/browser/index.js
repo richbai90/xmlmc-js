@@ -41,4 +41,4 @@ class XmlMethodCall {
         this.opts = Object.assign({}, defaultOpts, opts);
     }
 }
-exports.default = XmlMethodCall;
+exports.XmlMethodCall = XmlMethodCall;
