@@ -7,4 +7,6 @@ webpack.config.js
 yarn.lock
 .idea
 .gitignore
+dist/ESNEXT
+dist/tests
 

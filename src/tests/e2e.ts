@@ -1,21 +1,16 @@
 import Xmlmc from '..'
 
-let api = new Xmlmc('richvmserver.local');
+const date = new Date("January 1, 2016 00:00:00");
+const time = Math.round(date.getTime()/1000);
+
+let api = new Xmlmc('richvmserver.local',5015);
 api.session.analystLogon('admin', '').then(() => {
-    api.helpdesk.logAndAcceptNewCall('incident',{
-        additionalCallValues: false,
-    }).then(d => console.log(d)).then(() => {
+    api.data.sqlQuery("swdata", `select callref from opencall where logdatex <= ${time} limit 5`)
+        .then(d => {
+            console.log(d);
+        }).then(() => {
         api.session.analystLogoff();
-    });
-});
-
-
-
-api = new Xmlmc('http://localhost/sw/xmlmc/');
-api.session.analystLogon('admin', '').then(() => {
-    api.helpdesk.logAndAcceptNewCall('incident',{
-        additionalCallValues: false,
-    }).then(d => console.log(d)).then(() => {
+    }).catch(err => {
         api.session.analystLogoff();
-    });
+    })
 });

@@ -4,10 +4,7 @@
       "env",
       {
         "targets": {
-          "browsers": [
-            "FireFox <= 52",
-            "Explorer 10"
-          ]
+          "node" : "6.10"
         }
       }
     ]
