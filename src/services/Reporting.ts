@@ -2,7 +2,7 @@ import * as paramTypes from '../types/ReportingTypes'
 import {AxiosError, AxiosResponse} from "axios";
 import {XmlmcParams} from "../types/XmlmcTypes";
 import {Connection, XmlmcResponse} from '../Connection'
-import Xmlmc from '../XmlMethodCall'
+import Xmlmc from '..'
 import {Request} from '../Request'
 
     export class Reporting {

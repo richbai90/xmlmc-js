@@ -1,0 +1,32 @@
+import * as paramTypes from '../types/SessionTypes';
+import { Connection, XmlmcResponse } from '../Connection';
+import Xmlmc from '..';
+export declare class Session {
+    private connection;
+    private xmlmc;
+    private service;
+    private paramMap;
+    constructor(connection: Connection, xmlmc: Xmlmc);
+    analystLogoff(optionalParams?: paramTypes.analystLogoffParams): Promise<XmlmcResponse>;
+    analystLogon(userId: string, password: string, optionalParams?: paramTypes.analystLogonParams): Promise<XmlmcResponse>;
+    analystLogonTrust(userId: string, secretKey: string, optionalParams?: paramTypes.analystLogonTrustParams): Promise<XmlmcResponse>;
+    bindSession(sessionId: string, optionalParams?: paramTypes.bindSessionParams): Promise<XmlmcResponse>;
+    changePassword(oldPassword: string, newPassword: string, optionalParams?: paramTypes.changePasswordParams): Promise<XmlmcResponse>;
+    closeLocalSession(optionalParams?: paramTypes.closeLocalSessionParams): Promise<XmlmcResponse>;
+    convertDateTimeInText(inputText: string, optionalParams?: paramTypes.convertDateTimeInTextParams): Promise<XmlmcResponse>;
+    createLocalSession(optionalParams?: paramTypes.createLocalSessionParams): Promise<XmlmcResponse>;
+    getSessionDDInfo(optionalParams?: paramTypes.getSessionDDInfoParams): Promise<XmlmcResponse>;
+    getSessionInfo(optionalParams?: paramTypes.getSessionInfoParams): Promise<XmlmcResponse>;
+    getSessionInfo2(optionalParams?: paramTypes.getSessionInfo2Params): Promise<XmlmcResponse>;
+    hasRight(userRight: string, optionalParams?: paramTypes.hasRightParams): Promise<XmlmcResponse>;
+    isSessionValid(optionalParams?: paramTypes.isSessionValidParams): Promise<XmlmcResponse>;
+    lockCustomerAccount(selfServiceInstance: string, customerId: string, permanent: boolean, optionalParams?: paramTypes.lockCustomerAccountParams): Promise<XmlmcResponse>;
+    selfServiceLogoff(optionalParams?: paramTypes.selfServiceLogoffParams): Promise<XmlmcResponse>;
+    selfServiceLogon(selfServiceInstance: string, customerId: string, password: string, optionalParams?: paramTypes.selfServiceLogonParams): Promise<XmlmcResponse>;
+    setDatabaseRight(tableName: string, rightFlag: number, rightAllowed: boolean, optionalParams?: paramTypes.setDatabaseRightParams): Promise<XmlmcResponse>;
+    setOutputValidation(validateResultMessage: boolean, optionalParams?: paramTypes.setOutputValidationParams): Promise<XmlmcResponse>;
+    setUserRight(rightClass: string, rightFlag: number, rightAllowed: boolean, optionalParams?: paramTypes.setUserRightParams): Promise<XmlmcResponse>;
+    setVariable(sessionVariable: Object, optionalParams?: paramTypes.setVariableParams): Promise<XmlmcResponse>;
+    switchAnalystContext(groupId: string, optionalParams?: paramTypes.switchAnalystContextParams): Promise<XmlmcResponse>;
+    unlockCustomerAccount(selfServiceInstance: string, customerId: string, optionalParams?: paramTypes.unlockCustomerAccountParams): Promise<XmlmcResponse>;
+}

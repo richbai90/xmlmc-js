@@ -1,4 +1,4 @@
-import Xmlmc from '../XmlMethodCall'
+import Xmlmc from '..'
 
 let api = new Xmlmc('richvmserver.local');
 api.session.analystLogon('admin', '').then(() => {
