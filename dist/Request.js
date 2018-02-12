@@ -8,7 +8,7 @@ class Request {
         this.method = method;
         this.xmlmc = xmlbuilder_1.create('methodCall').att('service', service).att('method', method);
         this.paramsNotSet = true;
-        if (params) {
+        if (Object.keys(params).length) {
             this.addParams(params, paramMap);
         }
     }

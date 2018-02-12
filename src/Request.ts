@@ -14,7 +14,7 @@ export class Request implements XmlmcRequest {
         this.xmlmc = create('methodCall').att('service', service).att('method', method);
         this.paramsNotSet = true;
 
-        if (params) {
+        if (Object.keys(params).length) {
             this.addParams(params, paramMap);
         }
     }
