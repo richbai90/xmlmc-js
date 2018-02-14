@@ -9,6 +9,7 @@ import { Reporting } from "./services/Reporting";
 import { Selfservice } from "./services/Selfservice";
 import { Survey } from "./services/Survey";
 import { System } from "./services/System";
+import "babel-polyfill";
 export declare type XmlmcOptions = {
     data?: {
         formatValues?: boolean;

@@ -12,6 +12,7 @@ const Selfservice_1 = require("./services/Selfservice");
 const Survey_1 = require("./services/Survey");
 const System_1 = require("./services/System");
 const URL = require("url-parse");
+require("babel-polyfill"); // Add neccessary polyfills
 class XmlMethodCall {
     constructor(server = 'localhost', port, opts) {
         if (server.match(/^(http:\/\/)/)) {

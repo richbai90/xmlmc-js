@@ -9,7 +9,8 @@ import {Reporting} from "./services/Reporting";
 import {Selfservice} from "./services/Selfservice";
 import {Survey} from "./services/Survey";
 import {System} from "./services/System";
-import URL = require('url-parse')
+import URL = require('url-parse');
+import "babel-polyfill"; // Add neccessary polyfills
 
 export type XmlmcOptions = {
     data?: {
