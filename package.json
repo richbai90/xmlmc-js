@@ -1,6 +1,6 @@
 {
   "name": "xmlmc",
-  "version": "1.2.5",
+  "version": "1.3.0",
   "description": "Wrapper for Hornbill Supportworks XMLMC API",
   "main": "./dist/index.js",
   "browser": "./dist/browser/index.min.js",
