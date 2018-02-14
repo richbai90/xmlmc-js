@@ -1,6 +1,6 @@
 {
   "name": "xmlmc",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Wrapper for Hornbill Supportworks XMLMC API",
   "main": "./dist/index.js",
   "browser": "./dist/browser/index.min.js",
@@ -30,6 +30,7 @@
     "@types/url-parse": "^1.1.0",
     "@types/xmlbuilder": "^0.0.32",
     "axios": "^0.17.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
     "lodash": "^4.17.4",
     "sqlstring": "^2.3.0",
