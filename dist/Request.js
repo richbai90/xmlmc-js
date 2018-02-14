@@ -1,5 +1,15 @@
 "use strict";
 
+var _getPrototypeOf = require("babel-runtime/core-js/object/get-prototype-of");
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _keys = require("babel-runtime/core-js/object/keys");
+
+var _keys2 = _interopRequireDefault(_keys);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 Object.defineProperty(exports, "__esModule", { value: true });
 const xmlbuilder_1 = require("xmlbuilder");
 class Request {
@@ -8,7 +18,7 @@ class Request {
         this.method = method;
         this.xmlmc = xmlbuilder_1.create('methodCall').att('service', service).att('method', method);
         this.paramsNotSet = true;
-        if (Object.keys(params).length) {
+        if ((0, _keys2.default)(params).length) {
             this.addParams(params, paramMap);
         }
     }
@@ -20,13 +30,13 @@ class Request {
             el = el.ele(key);
             this.paramsNotSet = false;
         }
-        const paramKeys = Object.keys(params);
+        const paramKeys = (0, _keys2.default)(params);
         paramKeys.forEach(p => {
             let param = params[p];
             if (param === undefined) {
                 return;
             }
-            if (Object.getPrototypeOf(param) === Object.prototype) {
+            if ((0, _getPrototypeOf2.default)(param) === Object.prototype) {
                 el = el.ele(p);
                 this._createXmlmc(params[p], el);
             } else {

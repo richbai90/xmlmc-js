@@ -1,5 +1,11 @@
 "use strict";
 
+var _map = require("babel-runtime/core-js/map");
+
+var _map2 = _interopRequireDefault(_map);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 Object.defineProperty(exports, "__esModule", { value: true });
 const Request_1 = require("../Request");
 class Reporting {
@@ -7,7 +13,7 @@ class Reporting {
         this.connection = connection;
         this.xmlmc = xmlmc;
         this.service = 'reporting';
-        this.paramMap = new Map([['getCustomReportTree', ['folderPath', 'recursive']], ['getSystemReportTree', ['folderID', 'recursive']]]);
+        this.paramMap = new _map2.default([['getCustomReportTree', ['folderPath', 'recursive']], ['getSystemReportTree', ['folderID', 'recursive']]]);
     }
     getCustomReportTree(optionalParams) {
         let request = new Request_1.Request(this.service, 'getCustomReportTree', optionalParams || {}, this.paramMap.get('getCustomReportTree') || []);

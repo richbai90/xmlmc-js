@@ -1,5 +1,11 @@
 "use strict";
 
+var _assign = require("babel-runtime/core-js/object/assign");
+
+var _assign2 = _interopRequireDefault(_assign);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 Object.defineProperty(exports, "__esModule", { value: true });
 const Connection_1 = require("./Connection");
 const Session_1 = require("./services/Session");
@@ -38,7 +44,7 @@ class XmlMethodCall {
         this.selfservice = new Selfservice_1.Selfservice(this.connection, this);
         this.survey = new Survey_1.Survey(this.connection, this);
         this.system = new System_1.System(this.connection, this);
-        this.opts = Object.assign({}, defaultOpts, opts);
+        this.opts = (0, _assign2.default)({}, defaultOpts, opts);
     }
 }
 exports.XmlMethodCall = XmlMethodCall;

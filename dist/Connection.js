@@ -1,6 +1,22 @@
 "use strict";
 
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+var _iterator = require("babel-runtime/core-js/symbol/iterator");
+
+var _iterator2 = _interopRequireDefault(_iterator);
+
+var _objectWithoutProperties2 = require("babel-runtime/helpers/objectWithoutProperties");
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+var _assign = require("babel-runtime/core-js/object/assign");
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _promise = require("babel-runtime/core-js/promise");
+
+var _promise2 = _interopRequireDefault(_promise);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
@@ -58,7 +74,7 @@ class Connection {
      * @throws Module importing error. Occurs if for some reason we were unable to require the underlying modules. Indicates a problem with the library, not the developer.
      */
     sendRequest(xmlmc) {
-        return new Promise((resolve, reject) => {
+        return new _promise2.default((resolve, reject) => {
             const post = this.port === 80 || this.https ? '/xmlmc/' : '/sw';
             this.endpoint.post(post, xmlmc.toString(), { withCredentials: true }).then(response => {
                 response.data.status ? resolve(response.data) : reject(response.data);
@@ -82,7 +98,7 @@ class Connection {
         // Pass the entire URL including the base URL with each post
         // todo: May not be neccessary, but could be good to do the same for get method as well.
         endpoint['post'] = (url, data, config) => {
-            let requestConfig = Object.assign(config || {}, {
+            let requestConfig = (0, _assign2.default)(config || {}, {
                 method: 'POST',
                 url: url.match(/^(\/)\w+/) ? defaultConfig.baseURL ? defaultConfig.baseURL + url : url : url === "" ? defaultConfig.baseURL || url : url,
                 data: data
@@ -95,8 +111,8 @@ exports.Connection = Connection;
 function transformResponse(response) {
     let parsedResponse = JSON.parse(response);
     let { '@status': status, data } = parsedResponse,
-        rest = _objectWithoutProperties(parsedResponse, ['@status', "data"]);
-    parsedResponse = Object.assign({ status: status, params: {}, data: [] }, rest);
+        rest = (0, _objectWithoutProperties3.default)(parsedResponse, ['@status', "data"]);
+    parsedResponse = (0, _assign2.default)({ status: status, params: {}, data: [] }, rest);
     data = isIterable(data) && data;
     if (data) {
         parsedResponse.data = handleDataParam(data);
@@ -122,5 +138,5 @@ function isIterable(obj) {
     if (obj == null) {
         return false;
     }
-    return Object(obj) === obj || typeof obj[Symbol.iterator] === 'function';
+    return Object(obj) === obj || typeof obj[_iterator2.default] === 'function';
 }

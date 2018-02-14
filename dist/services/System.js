@@ -1,5 +1,15 @@
 "use strict";
 
+var _assign = require("babel-runtime/core-js/object/assign");
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _map = require("babel-runtime/core-js/map");
+
+var _map2 = _interopRequireDefault(_map);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 Object.defineProperty(exports, "__esModule", { value: true });
 const Request_1 = require("../Request");
 class System {
@@ -7,7 +17,7 @@ class System {
         this.connection = connection;
         this.xmlmc = xmlmc;
         this.service = 'system';
-        this.paramMap = new Map([['getTimezoneDetails', ['timeZone']], ['getTimezoneOffset', ['timeZone']], ['multiClipAddItem', ['personalClipboard', 'name', 'itemData', 'multiClipGroup']], ['multiClipDeleteItem', ['itemId']], ['multiClipGetItemData', ['itemId']], ['multiClipSetItemData', ['itemId', 'itemData']], ['offsetEpochTime', ['epochTime', 'timeZone']], ['sendProductFeedback', ['app', 'message', 'nps']]]);
+        this.paramMap = new _map2.default([['getTimezoneDetails', ['timeZone']], ['getTimezoneOffset', ['timeZone']], ['multiClipAddItem', ['personalClipboard', 'name', 'itemData', 'multiClipGroup']], ['multiClipDeleteItem', ['itemId']], ['multiClipGetItemData', ['itemId']], ['multiClipSetItemData', ['itemId', 'itemData']], ['offsetEpochTime', ['epochTime', 'timeZone']], ['sendProductFeedback', ['app', 'message', 'nps']]]);
     }
     getFileTypeRestriction(optionalParams) {
         let request = new Request_1.Request(this.service, 'getFileTypeRestriction', optionalParams || {}, this.paramMap.get('getFileTypeRestriction') || []);
@@ -30,7 +40,7 @@ class System {
         return this.connection.sendRequest(request);
     }
     multiClipAddItem(personalClipboard, name, itemData, optionalParams) {
-        let request = new Request_1.Request(this.service, 'multiClipAddItem', Object.assign({}, {
+        let request = new Request_1.Request(this.service, 'multiClipAddItem', (0, _assign2.default)({}, {
             personalClipboard,
             name,
             itemData
@@ -38,11 +48,11 @@ class System {
         return this.connection.sendRequest(request);
     }
     multiClipDeleteItem(itemId, optionalParams) {
-        let request = new Request_1.Request(this.service, 'multiClipDeleteItem', Object.assign({}, { itemId }, optionalParams || {}), this.paramMap.get('multiClipDeleteItem') || []);
+        let request = new Request_1.Request(this.service, 'multiClipDeleteItem', (0, _assign2.default)({}, { itemId }, optionalParams || {}), this.paramMap.get('multiClipDeleteItem') || []);
         return this.connection.sendRequest(request);
     }
     multiClipGetItemData(itemId, optionalParams) {
-        let request = new Request_1.Request(this.service, 'multiClipGetItemData', Object.assign({}, { itemId }, optionalParams || {}), this.paramMap.get('multiClipGetItemData') || []);
+        let request = new Request_1.Request(this.service, 'multiClipGetItemData', (0, _assign2.default)({}, { itemId }, optionalParams || {}), this.paramMap.get('multiClipGetItemData') || []);
         return this.connection.sendRequest(request);
     }
     multiClipGetTree(optionalParams) {
@@ -50,18 +60,18 @@ class System {
         return this.connection.sendRequest(request);
     }
     multiClipSetItemData(itemId, itemData, optionalParams) {
-        let request = new Request_1.Request(this.service, 'multiClipSetItemData', Object.assign({}, {
+        let request = new Request_1.Request(this.service, 'multiClipSetItemData', (0, _assign2.default)({}, {
             itemId,
             itemData
         }, optionalParams || {}), this.paramMap.get('multiClipSetItemData') || []);
         return this.connection.sendRequest(request);
     }
     offsetEpochTime(epochTime, optionalParams) {
-        let request = new Request_1.Request(this.service, 'offsetEpochTime', Object.assign({}, { epochTime }, optionalParams || {}), this.paramMap.get('offsetEpochTime') || []);
+        let request = new Request_1.Request(this.service, 'offsetEpochTime', (0, _assign2.default)({}, { epochTime }, optionalParams || {}), this.paramMap.get('offsetEpochTime') || []);
         return this.connection.sendRequest(request);
     }
     sendProductFeedback(message, optionalParams) {
-        let request = new Request_1.Request(this.service, 'sendProductFeedback', Object.assign({}, { message }, optionalParams || {}), this.paramMap.get('sendProductFeedback') || []);
+        let request = new Request_1.Request(this.service, 'sendProductFeedback', (0, _assign2.default)({}, { message }, optionalParams || {}), this.paramMap.get('sendProductFeedback') || []);
         return this.connection.sendRequest(request);
     }
 }
