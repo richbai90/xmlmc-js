@@ -1,4 +1,4 @@
-import {CallRecord, Status} from '../src/Call';
+import {CallRecord, Status} from '../src/call';
 import {XmlMethodCall} from "../src";
 import {expect} from 'chai';
 import 'mocha';
