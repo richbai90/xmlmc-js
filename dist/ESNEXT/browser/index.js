@@ -1,4 +1,7 @@
 "use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
 Object.defineProperty(exports, "__esModule", { value: true });
 const Connection_1 = require("./Connection");
 const Session_1 = require("./services/Session");
@@ -12,6 +15,7 @@ const Selfservice_1 = require("./services/Selfservice");
 const Survey_1 = require("./services/Survey");
 const System_1 = require("./services/System");
 const URL = require("url-parse");
+__export(require("./call"));
 class XmlMethodCall {
     constructor(server = 'localhost', port, opts) {
         if (server.match(/^(http:\/\/)/)) {

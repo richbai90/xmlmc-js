@@ -11,6 +11,8 @@ import {Survey} from "./services/Survey";
 import {System} from "./services/System";
 import URL = require('url-parse')
 
+export * from "./call"
+
 export type XmlmcOptions = {
     data?: {
         formatValues?: boolean,

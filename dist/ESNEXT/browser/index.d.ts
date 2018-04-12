@@ -9,6 +9,7 @@ import { Reporting } from "./services/Reporting";
 import { Selfservice } from "./services/Selfservice";
 import { Survey } from "./services/Survey";
 import { System } from "./services/System";
+export * from "./call";
 export declare type XmlmcOptions = {
     data?: {
         formatValues?: boolean;
