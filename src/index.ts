@@ -9,6 +9,7 @@ import {Reporting} from "./services/Reporting";
 import {Selfservice} from "./services/Selfservice";
 import {Survey} from "./services/Survey";
 import {System} from "./services/System";
+import {Vpme} from './services/Vpme';
 import URL = require('url-parse')
 
 export * from "./call"
@@ -37,6 +38,7 @@ export class XmlMethodCall {
     selfservice: Selfservice;
     survey: Survey;
     system: System;
+    vpme: Vpme;
 
     constructor(server: string = 'localhost', port?: number, opts?: XmlmcOptions) {
         if (server.match(/^(http:\/\/)/)) {
@@ -64,6 +66,7 @@ export class XmlMethodCall {
         this.selfservice = new Selfservice(this.connection, this);
         this.survey = new Survey(this.connection, this);
         this.system = new System(this.connection, this);
+        this.vpme = new Vpme(this.connection, this);
         this.opts = Object.assign({}, defaultOpts, opts);
     }
 

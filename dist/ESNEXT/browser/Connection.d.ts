@@ -24,8 +24,7 @@ export declare class Connection {
     protected server: string;
     protected port: number;
     protected https: boolean;
-    protected storeCookies: boolean;
-    protected endpoint: AxiosInstance;
+    protected endpoint: AxiosInstance | null;
     /**
      * Create a connection. Defers to the private _connect method.
      * @param {string} server - IP or FQDN to send the requests to
@@ -40,7 +39,7 @@ export declare class Connection {
      * @returns {*}
      * @private
      */
-    private _connect(server, port);
+    private _connect;
     /**
      * @param xmlmc
      * @returns {Promise.<Response>}

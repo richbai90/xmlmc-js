@@ -14,6 +14,7 @@ const Reporting_1 = require("./services/Reporting");
 const Selfservice_1 = require("./services/Selfservice");
 const Survey_1 = require("./services/Survey");
 const System_1 = require("./services/System");
+const Vpme_1 = require("./services/Vpme");
 const URL = require("url-parse");
 __export(require("./call"));
 class XmlMethodCall {
@@ -42,6 +43,7 @@ class XmlMethodCall {
         this.selfservice = new Selfservice_1.Selfservice(this.connection, this);
         this.survey = new Survey_1.Survey(this.connection, this);
         this.system = new System_1.System(this.connection, this);
+        this.vpme = new Vpme_1.Vpme(this.connection, this);
         this.opts = Object.assign({}, defaultOpts, opts);
     }
 }

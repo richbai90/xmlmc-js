@@ -13,7 +13,7 @@ export declare enum Status {
     Lost = 15,
     Closed = 16,
     Cancelled = 17,
-    ClosedAsChargeable = 18,
+    ClosedAsChargeable = 18
 }
 export interface Customer {
     fullname: string;
@@ -155,5 +155,5 @@ export declare class CallRecord {
      * @param {string} field
      * @return {Promise<string>}
      */
-    private getCallValue(field);
+    private getCallValue;
 }

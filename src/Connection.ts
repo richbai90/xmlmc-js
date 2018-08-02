@@ -30,8 +30,7 @@ export class Connection {
     protected server: string;
     protected port: number;
     protected https: boolean;
-    protected storeCookies: boolean;
-    protected endpoint: AxiosInstance;
+    protected endpoint: AxiosInstance | null;
     protected cookieJar: CookieJar;
 
     /**
@@ -43,7 +42,9 @@ export class Connection {
         this.server = server;
         this.port = port;
         this.https = false;
-        this._setupCookieJar(new CookieJar(), axiosCookieJarSupport);
+        this.cookieJar = new CookieJar();
+        this.endpoint = null;
+        this._setupCookieJar(this.cookieJar, axiosCookieJarSupport);
     }
 
     /**
@@ -90,9 +91,10 @@ export class Connection {
      * @throws Module importing error. Occurs if for some reason we were unable to require the underlying modules. Indicates a problem with the library, not the developer.
      */
     sendRequest(xmlmc: Request): Promise<XmlmcResponse> {
+        const endpoint = <AxiosInstance>this.endpoint;
         return new Promise<XmlmcResponse>((resolve, reject) => {
             const post: string = this.port === 80 || this.https ? '/xmlmc/' : '/sw';
-            this.endpoint.post(post, xmlmc.toString(), {withCredentials: true}).then((response: AxiosResponse) => {
+            endpoint.post(post, xmlmc.toString(), {withCredentials: true}).then((response: AxiosResponse) => {
                 response.data.status ? resolve(<XmlmcResponse>response.data) : reject(response.data);
             }).catch((err: AxiosError) => {
                 reject(err);
@@ -101,18 +103,17 @@ export class Connection {
     }
 
     private _setupCookieJar(jar: CookieJar, axiosCookieJar: (instance: AxiosInstance) => AxiosInstance): void {
-        axiosCookieJar(http);
+        // axiosCookieJar(http);
 
         // create the cookie jar we will use
         this.cookieJar = jar;
         // create an instnace of axios
         this._connect(this.server, this.port);
+        const endpoint = <AxiosInstance>this.endpoint;
         // tell the instance to use the cookie jar
-        this.endpoint.defaults.jar = this.cookieJar;
+        endpoint.defaults.jar = this.cookieJar;
         // Automatically send the cookie with each request
-        this.endpoint.defaults.withCredentials = true;
-
-        const endpoint = this.endpoint;
+        endpoint.defaults.withCredentials = true;
         const defaultConfig = endpoint.defaults;
 
         // Pass the entire URL including the base URL with each post
@@ -127,6 +128,8 @@ export class Connection {
             });
             return endpoint.request(requestConfig)
         }
+
+        axiosCookieJar(endpoint);
 
     }
 }

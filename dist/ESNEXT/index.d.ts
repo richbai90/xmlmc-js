@@ -8,6 +8,7 @@ import { Reporting } from "./services/Reporting";
 import { Selfservice } from "./services/Selfservice";
 import { Survey } from "./services/Survey";
 import { System } from "./services/System";
+import { Vpme } from './services/Vpme';
 export * from "./call";
 export declare type XmlmcOptions = {
     data?: {
@@ -30,5 +31,6 @@ export declare class XmlMethodCall {
     selfservice: Selfservice;
     survey: Survey;
     system: System;
+    vpme: Vpme;
     constructor(server?: string, port?: number, opts?: XmlmcOptions);
 }

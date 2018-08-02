@@ -13,7 +13,9 @@ class Connection {
         this.server = server;
         this.port = port;
         this.https = false;
-        this._setupCookieJar(new tough_cookie_1.CookieJar(), axiosCookieJarSupport);
+        this.cookieJar = new tough_cookie_1.CookieJar();
+        this.endpoint = null;
+        this._setupCookieJar(this.cookieJar, axiosCookieJarSupport);
     }
     /**
      * private connect method. Responsible for inferring https.
@@ -55,9 +57,10 @@ class Connection {
      * @throws Module importing error. Occurs if for some reason we were unable to require the underlying modules. Indicates a problem with the library, not the developer.
      */
     sendRequest(xmlmc) {
+        const endpoint = this.endpoint;
         return new Promise((resolve, reject) => {
             const post = this.port === 80 || this.https ? '/xmlmc/' : '/sw';
-            this.endpoint.post(post, xmlmc.toString(), { withCredentials: true }).then((response) => {
+            endpoint.post(post, xmlmc.toString(), { withCredentials: true }).then((response) => {
                 response.data.status ? resolve(response.data) : reject(response.data);
             }).catch((err) => {
                 reject(err);
@@ -65,16 +68,16 @@ class Connection {
         });
     }
     _setupCookieJar(jar, axiosCookieJar) {
-        axiosCookieJar(axios_1.default);
+        // axiosCookieJar(http);
         // create the cookie jar we will use
         this.cookieJar = jar;
         // create an instnace of axios
         this._connect(this.server, this.port);
-        // tell the instance to use the cookie jar
-        this.endpoint.defaults.jar = this.cookieJar;
-        // Automatically send the cookie with each request
-        this.endpoint.defaults.withCredentials = true;
         const endpoint = this.endpoint;
+        // tell the instance to use the cookie jar
+        endpoint.defaults.jar = this.cookieJar;
+        // Automatically send the cookie with each request
+        endpoint.defaults.withCredentials = true;
         const defaultConfig = endpoint.defaults;
         // Pass the entire URL including the base URL with each post
         // todo: May not be neccessary, but could be good to do the same for get method as well.
@@ -86,6 +89,7 @@ class Connection {
             });
             return endpoint.request(requestConfig);
         };
+        axiosCookieJar(endpoint);
     }
 }
 exports.Connection = Connection;

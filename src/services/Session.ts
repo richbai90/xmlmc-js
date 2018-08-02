@@ -72,7 +72,7 @@ export class Session {
     private xmlmc: XmlMethodCall;
     private service: string;
     private paramMap: Map<string, Array<string>>;
-    private _sessionInfo: SessionInfo;
+    private _sessionInfo: SessionInfo | null;
     private _id : string;
 
     constructor(connection: Connection, xmlmc: XmlMethodCall) {
@@ -81,6 +81,8 @@ export class Session {
         this.service = 'session';
         this.paramMap = new Map([['analystLogoff', ['sessionId',]], ['analystLogon', ['userId', 'password',]], ['analystLogonTrust', ['userId', 'secretKey',]], ['bindSession', ['sessionId',]], ['changePassword', ['oldPassword', 'newPassword',]], ['convertDateTimeInText', ['inputText',]], ['getSessionInfo', ['sessionId',]], ['getSessionInfo2', ['sessionId',]], ['hasRight', ['userRight',]], ['isSessionValid', ['sessionId',]], ['lockCustomerAccount', ['selfServiceInstance', 'customerId', 'permanent', 'duration',]], ['selfServiceLogon', ['selfServiceInstance', 'customerId', 'password',]], ['setDatabaseRight', ['tableName', 'rightFlag', 'rightAllowed',]], ['setOutputValidation', ['validateResultMessage',]], ['setUserRight', ['rightClass', 'rightFlag', 'rightAllowed',]], ['setVariable', ['sessionVariable',]], ['switchAnalystContext', ['groupId', 'analystId',]], ['unlockCustomerAccount', ['selfServiceInstance', 'customerId',]],]);
         this.id = null;
+        this._id = "";
+        this._sessionInfo = null;
     }
 
     get info() {

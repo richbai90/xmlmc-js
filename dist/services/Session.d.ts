@@ -71,7 +71,7 @@ export declare class Session {
     private _sessionInfo;
     private _id;
     constructor(connection: Connection, xmlmc: XmlMethodCall);
-    readonly info: SessionInfo;
+    readonly info: SessionInfo | null;
     id: string | null;
     analystLogoff(optionalParams?: paramTypes.analystLogoffParams): Promise<XmlmcResponse>;
     analystLogon(userId: string, password: string, optionalParams?: paramTypes.analystLogonParams): Promise<XmlmcResponse>;

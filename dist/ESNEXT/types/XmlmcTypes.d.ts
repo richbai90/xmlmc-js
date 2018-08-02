@@ -83,7 +83,7 @@ declare module xmlmcTypes {
     enum WorkItemActionBy {
         ASIGNEE = 0,
         ASIGNEE_GROUP = 1,
-        ANY = 3,
+        ANY = 3
     }
     interface FileList {
         fileName: string;

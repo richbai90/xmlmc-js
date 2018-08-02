@@ -11,6 +11,7 @@ class Connection {
         this.server = server;
         this.port = port;
         this.https = false;
+        this.endpoint = null;
         this._connect(server, port);
     }
     /**
@@ -53,9 +54,10 @@ class Connection {
      * @throws Module importing error. Occurs if for some reason we were unable to require the underlying modules. Indicates a problem with the library, not the developer.
      */
     async sendRequest(xmlmc) {
+        const endpoint = this.endpoint;
         return new Promise((resolve, reject) => {
             const post = this.port === 80 || this.https ? '/xmlmc/' : '/sw';
-            this.endpoint.post(post, xmlmc.toString(), { withCredentials: true }).then((response) => {
+            endpoint.post(post, xmlmc.toString(), { withCredentials: true }).then((response) => {
                 response.data.status ? resolve(response.data) : reject(response.data);
             }).catch((err) => {
                 reject(err);

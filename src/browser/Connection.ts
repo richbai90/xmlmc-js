@@ -1,6 +1,5 @@
 import http, {AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse} from 'axios'
 import {Request} from "../Request";
-import axiosCookieJarSupport = require('@3846masa/axios-cookiejar-support');
 
 /**
  * @typedef {Object} Response
@@ -29,8 +28,7 @@ export class Connection {
     protected server: string;
     protected port: number;
     protected https: boolean;
-    protected storeCookies: boolean;
-    protected endpoint: AxiosInstance;
+    protected endpoint: AxiosInstance | null;
 
     /**
      * Create a connection. Defers to the private _connect method.
@@ -41,6 +39,7 @@ export class Connection {
         this.server = server;
         this.port = port;
         this.https = false;
+        this.endpoint = null;
         this._connect(server, port);
     }
 
@@ -88,9 +87,10 @@ export class Connection {
      * @throws Module importing error. Occurs if for some reason we were unable to require the underlying modules. Indicates a problem with the library, not the developer.
      */
     async sendRequest(xmlmc: Request): Promise<XmlmcResponse> {
+        const endpoint = <AxiosInstance>this.endpoint;
         return new Promise<XmlmcResponse>((resolve, reject) => {
             const post: string = this.port === 80 || this.https ? '/xmlmc/' : '/sw';
-            this.endpoint.post(post, xmlmc.toString(), {withCredentials: true}).then((response: AxiosResponse) => {
+            endpoint.post(post, xmlmc.toString(), {withCredentials: true}).then((response: AxiosResponse) => {
                 response.data.status ? resolve(<XmlmcResponse>response.data) : reject(response.data);
             }).catch((err: AxiosError) => {
                 reject(err);
