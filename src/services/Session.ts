@@ -76,11 +76,72 @@ export class Session {
     private _id : string;
 
     constructor(connection: Connection, xmlmc: XmlMethodCall) {
+        this._id = '';
         this.connection = connection;
         this.xmlmc = xmlmc;
         this.service = 'session';
         this.paramMap = new Map([['analystLogoff', ['sessionId',]], ['analystLogon', ['userId', 'password',]], ['analystLogonTrust', ['userId', 'secretKey',]], ['bindSession', ['sessionId',]], ['changePassword', ['oldPassword', 'newPassword',]], ['convertDateTimeInText', ['inputText',]], ['getSessionInfo', ['sessionId',]], ['getSessionInfo2', ['sessionId',]], ['hasRight', ['userRight',]], ['isSessionValid', ['sessionId',]], ['lockCustomerAccount', ['selfServiceInstance', 'customerId', 'permanent', 'duration',]], ['selfServiceLogon', ['selfServiceInstance', 'customerId', 'password',]], ['setDatabaseRight', ['tableName', 'rightFlag', 'rightAllowed',]], ['setOutputValidation', ['validateResultMessage',]], ['setUserRight', ['rightClass', 'rightFlag', 'rightAllowed',]], ['setVariable', ['sessionVariable',]], ['switchAnalystContext', ['groupId', 'analystId',]], ['unlockCustomerAccount', ['selfServiceInstance', 'customerId',]],]);
         this.id = null;
+        this._sessionInfo = {
+            sessionId: '',
+    connectionId: -1,
+    sessionType: -1,
+    analystName: '',
+    analystId: '',
+    notifyPort: -1,
+    maxUdpSize: -1,
+    currentDataDictionary: '',
+    dateTimeFormat: '',
+    dateFormat: '',
+    timeFormat: '',
+    currencySymbol: '',
+    timeZone: '',
+    timeZoneOffset: -1,
+    privLevel: -1,
+    oracleInUse: -1,
+    npaProtocol: -1,
+    sla: -1,
+    slb: -1,
+    slc: -1,
+    sld: -1,
+    sle: -1,
+    slf: -1,
+    slg: -1,
+    slh: -1,
+    msSqlInUse: -1,
+    validateOutput: false,
+    appRight: -1,
+    analystInfo: {
+        analystId: '',
+        name: '',
+        "class": '',
+        supportGroup: '',
+        privilegeLevel: -1,
+        rightsA: -1,
+        rightsB: -1,
+        rightsC: -1,
+        rightsD: -1,
+        rightsE: -1,
+        rightsF: -1,
+        rightsG: -1,
+        rightsH: -1,
+        userDefaults: -1,
+        maxBackdatePeriod: -1,
+        timeZone: '',
+        dataDictionary: '',
+        availableStatus: '',
+        country: -1,
+        language: '',
+        dateTimeFormat: '',
+        dateFormat: '',
+        timeFormat: '',
+        currencySymbol: '',
+        maxAssignedCalls: -1,
+        lastLogOnTime: -1,
+        closeLevel: -1,
+        logLevel: -1,    },
+    group: '',
+        };
     }
 
     get info() {

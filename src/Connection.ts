@@ -30,7 +30,6 @@ export class Connection {
     protected server: string;
     protected port: number;
     protected https: boolean;
-    protected storeCookies: boolean;
     protected endpoint: AxiosInstance;
     protected cookieJar: CookieJar;
 
@@ -43,7 +42,8 @@ export class Connection {
         this.server = server;
         this.port = port;
         this.https = false;
-        this._setupCookieJar(new CookieJar(), axiosCookieJarSupport);
+        this.cookieJar = new CookieJar();
+        this.endpoint = this._setupEndpoint(axiosCookieJarSupport);
     }
 
     /**
@@ -54,7 +54,7 @@ export class Connection {
      * @returns {*}
      * @private
      */
-    private _connect(server: string, port: number): void {
+    private _connect(server: string, port: number): AxiosInstance {
         let url;
         switch (port) {
             case 443:
@@ -69,7 +69,7 @@ export class Connection {
         }
 
 
-        this.endpoint = http.create({
+        return http.create({
             baseURL: url,
             withCredentials: true,
             headers: {
@@ -100,19 +100,16 @@ export class Connection {
         })
     }
 
-    private _setupCookieJar(jar: CookieJar, axiosCookieJar: (instance: AxiosInstance) => AxiosInstance): void {
+    private _setupEndpoint(axiosCookieJar: (instance: AxiosInstance) => AxiosInstance): AxiosInstance {
         axiosCookieJar(http);
-
-        // create the cookie jar we will use
-        this.cookieJar = jar;
         // create an instnace of axios
-        this._connect(this.server, this.port);
+        const endpoint = this._connect(this.server, this.port);
         // tell the instance to use the cookie jar
-        this.endpoint.defaults.jar = this.cookieJar;
+        endpoint.defaults.jar = this.cookieJar;
         // Automatically send the cookie with each request
-        this.endpoint.defaults.withCredentials = true;
+        endpoint.defaults.withCredentials = true;
 
-        const endpoint = this.endpoint;
+        
         const defaultConfig = endpoint.defaults;
 
         // Pass the entire URL including the base URL with each post
@@ -127,6 +124,8 @@ export class Connection {
             });
             return endpoint.request(requestConfig)
         }
+
+        return endpoint;
 
     }
 }

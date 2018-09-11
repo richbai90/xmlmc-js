@@ -16,19 +16,16 @@ describe('CallRecord', () => {
 
     let xmlmc: XmlMethodCall;
     let call: CallRecord;
-    let clock: sinon.clock;
     before(async () => {
         xmlmc = new XmlMethodCall('richvmserver.local');
         await xmlmc.session.analystLogon('admin', btoa('admin'));
         call = new CallRecord(1195, xmlmc);
-        clock = sinon.useFakeTimers();
 
     });
 
     after('end xmlmc session', async () => {
         await call.update('this is a test');
         await xmlmc.session.analystLogoff();
-        clock.restore();
     });
 
     describe('get methods', () => {

@@ -4,7 +4,7 @@ A javascript wrapper for the Supportworks XMLMC API. To use run
 
 ```js
 npm install xmlmc
-const Xmlmc = require('xmlmc');
+import { XmlMethodCall } = from 'xmlmc';
 ``` 
 
 
@@ -15,9 +15,9 @@ To use it in a strictly browser environment, just use the minified code in dist/
 >= firefox 52 and IE 10 / node >= 6.10
 
 ```js
-import Xmlmc from 'xmlmc'
-const xmlmc = new Xmlmc('https://devserver.local');
-xmlmc.session.analystLogon('admin', 'password').then(() => {
+import { XmlmMethodCall } from 'xmlmc'
+const xmlmc = new XmlMethodCall('https://devserver.local');
+xmlmc.session.analystLogon('admin', btoa('password')).then(() => {
     ...
 }).catch(promiseCatcher)
 
@@ -25,7 +25,10 @@ function promiseCatcher(e) {
     console.log(e);
 }
 ```
+Or use async/await
 
-The default export is the `XmlMethodCall` class
+```js
+await xmlmc.session.analystLogon('admin',btoa('password'))
+```
 
 View the full docs [here](https://richbai90.github.io/xmlmc-js/) 
