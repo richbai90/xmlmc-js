@@ -90,10 +90,19 @@
 						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_services_session_.session.html#_id" class="tsd-kind-icon">_id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_services_session_.session.html#_sessioninfo" class="tsd-kind-icon">_session<wbr>Info</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_services_session_.session.html#connection" class="tsd-kind-icon">connection</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_services_session_.session.html#parammap" class="tsd-kind-icon">param<wbr>Map</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_services_session_.session.html#service" class="tsd-kind-icon">service</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_services_session_.session.html#xmlmc" class="tsd-kind-icon">xmlmc</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_services_session_.session.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_services_session_.session.html#info" class="tsd-kind-icon">info</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -132,13 +141,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Session<span class="tsd-signature-symbol">(</span>connection<span class="tsd-signature-symbol">: </span><a href="_connection_.connection.html" class="tsd-signature-type">Connection</a>, xmlmc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Xmlmc</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_services_session_.session.html" class="tsd-signature-type">Session</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Session<span class="tsd-signature-symbol">(</span>connection<span class="tsd-signature-symbol">: </span><a href="_connection_.connection.html" class="tsd-signature-type">Connection</a>, xmlmc<span class="tsd-signature-symbol">: </span><a href="_index_.xmlmethodcall.html" class="tsd-signature-type">XmlMethodCall</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_services_session_.session.html" class="tsd-signature-type">Session</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L13">services/Session.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L76">services/Session.ts:76</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -147,7 +156,7 @@
 									<h5>connection: <a href="_connection_.connection.html" class="tsd-signature-type">Connection</a></h5>
 								</li>
 								<li>
-									<h5>xmlmc: <span class="tsd-signature-type">Xmlmc</span></h5>
+									<h5>xmlmc: <a href="_index_.xmlmethodcall.html" class="tsd-signature-type">XmlMethodCall</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_services_session_.session.html" class="tsd-signature-type">Session</a></h4>
@@ -158,12 +167,32 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _id</h3>
+					<div class="tsd-signature tsd-kind-icon">_id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L76">services/Session.ts:76</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_sessioninfo" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _session<wbr>Info</h3>
+					<div class="tsd-signature tsd-kind-icon">_session<wbr>Info<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_services_session_.sessioninfo.html" class="tsd-signature-type">SessionInfo</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L75">services/Session.ts:75</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="connection" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> connection</h3>
 					<div class="tsd-signature tsd-kind-icon">connection<span class="tsd-signature-symbol">:</span> <a href="_connection_.connection.html" class="tsd-signature-type">Connection</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L10">services/Session.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L71">services/Session.ts:71</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -173,7 +202,7 @@
 					<div class="tsd-signature tsd-kind-icon">param<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L13">services/Session.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L74">services/Session.ts:74</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -183,19 +212,74 @@
 					<div class="tsd-signature tsd-kind-icon">service<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L12">services/Session.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L73">services/Session.ts:73</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="xmlmc" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> xmlmc</h3>
-					<div class="tsd-signature tsd-kind-icon">xmlmc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Xmlmc</span></div>
+					<div class="tsd-signature tsd-kind-icon">xmlmc<span class="tsd-signature-symbol">:</span> <a href="_index_.xmlmethodcall.html" class="tsd-signature-type">XmlMethodCall</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L11">services/Session.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L72">services/Session.ts:72</a></li>
 						</ul>
 					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> id<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> id<span class="tsd-signature-symbol">(</span>sessionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L151">services/Session.ts:151</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">string</span>
+							</h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L155">services/Session.ts:155</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>sessionId: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="info" class="tsd-anchor"></a>
+					<h3>info</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> info<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_services_session_.sessioninfo.html" class="tsd-signature-type">SessionInfo</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L147">services/Session.ts:147</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_services_session_.sessioninfo.html" class="tsd-signature-type">SessionInfo</a></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -210,7 +294,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L22">services/Session.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L229">services/Session.ts:229</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -233,7 +317,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L27">services/Session.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L235">services/Session.ts:235</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -262,7 +346,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L35">services/Session.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L246">services/Session.ts:246</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -291,7 +375,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L43">services/Session.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L257">services/Session.ts:257</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -317,7 +401,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L48">services/Session.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L265">services/Session.ts:265</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -346,7 +430,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L56">services/Session.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L273">services/Session.ts:273</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -369,7 +453,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L61">services/Session.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L278">services/Session.ts:278</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -395,7 +479,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L66">services/Session.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L283">services/Session.ts:283</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -418,7 +502,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L71">services/Session.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L288">services/Session.ts:288</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -441,7 +525,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L76">services/Session.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L293">services/Session.ts:293</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -464,7 +548,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L81">services/Session.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L298">services/Session.ts:298</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -487,7 +571,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L86">services/Session.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L303">services/Session.ts:303</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -513,7 +597,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L91">services/Session.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L308">services/Session.ts:308</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -536,7 +620,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L96">services/Session.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L313">services/Session.ts:313</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -568,7 +652,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L105">services/Session.ts:105</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L322">services/Session.ts:322</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -591,7 +675,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L110">services/Session.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L328">services/Session.ts:328</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -623,7 +707,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L119">services/Session.ts:119</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L340">services/Session.ts:340</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -655,7 +739,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L128">services/Session.ts:128</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L349">services/Session.ts:349</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -681,7 +765,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L133">services/Session.ts:133</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L354">services/Session.ts:354</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -713,7 +797,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L142">services/Session.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L363">services/Session.ts:363</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -739,7 +823,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L147">services/Session.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L368">services/Session.ts:368</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -765,7 +849,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/50c58eb/src/services/Session.ts#L152">services/Session.ts:152</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/services/Session.ts#L373">services/Session.ts:373</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -808,6 +892,12 @@
 								<a href="_services_session_.session.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_services_session_.session.html#_id" class="tsd-kind-icon">_id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_services_session_.session.html#_sessioninfo" class="tsd-kind-icon">_session<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_services_session_.session.html#connection" class="tsd-kind-icon">connection</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
@@ -818,6 +908,12 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_services_session_.session.html#xmlmc" class="tsd-kind-icon">xmlmc</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_services_session_.session.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_services_session_.session.html#info" class="tsd-kind-icon">info</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_services_session_.session.html#analystlogoff" class="tsd-kind-icon">analyst<wbr>Logoff</a>
@@ -889,6 +985,9 @@
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_services_session_.sessioninfo.html" class="tsd-kind-icon">Session<wbr>Info</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
