@@ -38,6 +38,10 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -49,7 +53,7 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../index">Globals</a>
+					<a href="../globals">Globals</a>
 				</li>
 				<li>
 					<a href="../modules/_call_">&quot;call&quot;</a>
@@ -101,6 +105,21 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_call_.callrecord#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_call_.callrecord#_callclass" class="tsd-kind-icon">_call<wbr>Class</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_call_.callrecord#_callref" class="tsd-kind-icon">_callref</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_call_.callrecord#_customer" class="tsd-kind-icon">_customer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_call_.callrecord#_description" class="tsd-kind-icon">_description</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_call_.callrecord#_lastupdatetext" class="tsd-kind-icon">_last<wbr>Update<wbr>Text</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_call_.callrecord#_logdatex" class="tsd-kind-icon">_log<wbr>DateX</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_call_.callrecord#_owner" class="tsd-kind-icon">_owner</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_call_.callrecord#_status" class="tsd-kind-icon">_status</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_call_.callrecord#_summary" class="tsd-kind-icon">_summary</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_call_.callrecord#_xmlmc" class="tsd-kind-icon">_xmlmc</a></li>
+							</ul>
+						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
@@ -123,6 +142,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_call_.callrecord#assignto" class="tsd-kind-icon">assign<wbr>To</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_call_.callrecord#cancel" class="tsd-kind-icon">cancel</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_call_.callrecord#close" class="tsd-kind-icon">close</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_call_.callrecord#getcallvalue" class="tsd-kind-icon">get<wbr>Call<wbr>Value</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_call_.callrecord#invalidatecache" class="tsd-kind-icon">invalidate<wbr>Cache</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_call_.callrecord#placeonhold" class="tsd-kind-icon">place<wbr>OnHold</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_call_.callrecord#reactivate" class="tsd-kind-icon">reactivate</a></li>
@@ -146,7 +166,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L50">call.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L50">call.ts:50</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -172,6 +192,109 @@
 					</ul>
 				</section>
 			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_callclass" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _call<wbr>Class</h3>
+					<div class="tsd-signature tsd-kind-icon">_call<wbr>Class<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L45">call.ts:45</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_callref" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _callref</h3>
+					<div class="tsd-signature tsd-kind-icon">_callref<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L41">call.ts:41</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_customer" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _customer</h3>
+					<div class="tsd-signature tsd-kind-icon">_customer<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_call_.customer" class="tsd-signature-type">Customer</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L49">call.ts:49</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_description" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _description</h3>
+					<div class="tsd-signature tsd-kind-icon">_description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L47">call.ts:47</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_lastupdatetext" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _last<wbr>Update<wbr>Text</h3>
+					<div class="tsd-signature tsd-kind-icon">_last<wbr>Update<wbr>Text<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L43">call.ts:43</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_logdatex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _log<wbr>DateX</h3>
+					<div class="tsd-signature tsd-kind-icon">_log<wbr>DateX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L42">call.ts:42</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_owner" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _owner</h3>
+					<div class="tsd-signature tsd-kind-icon">_owner<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L48">call.ts:48</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_status" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _status</h3>
+					<div class="tsd-signature tsd-kind-icon">_status<span class="tsd-signature-symbol">:</span> <a href="../enums/_call_.status" class="tsd-signature-type">Status</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L50">call.ts:50</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_summary" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _summary</h3>
+					<div class="tsd-signature tsd-kind-icon">_summary<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L46">call.ts:46</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_xmlmc" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _xmlmc</h3>
+					<div class="tsd-signature tsd-kind-icon">_xmlmc<span class="tsd-signature-symbol">:</span> <a href="_index_.xmlmethodcall" class="tsd-signature-type">XmlMethodCall</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L44">call.ts:44</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
@@ -184,7 +307,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L66">call.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L66">call.ts:66</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -206,7 +329,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L104">call.ts:104</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L104">call.ts:104</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -228,7 +351,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L86">call.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L86">call.ts:86</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -250,7 +373,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L163">call.ts:163</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L163">call.ts:163</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -272,7 +395,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L150">call.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L150">call.ts:150</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -294,7 +417,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L95">call.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L95">call.ts:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -316,7 +439,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L142">call.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L142">call.ts:142</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -338,7 +461,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L130">call.ts:130</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L130">call.ts:130</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -360,7 +483,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L77">call.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L77">call.ts:77</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -385,7 +508,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L303">call.ts:303</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L303">call.ts:303</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -407,7 +530,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L317">call.ts:317</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L317">call.ts:317</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -429,7 +552,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L193">call.ts:193</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L193">call.ts:193</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -463,7 +586,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L240">call.ts:240</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L240">call.ts:240</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -491,7 +614,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L272">call.ts:272</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L272">call.ts:272</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -509,6 +632,34 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="getcallvalue" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>Call<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Call<wbr>Value<span class="tsd-signature-symbol">(</span>field<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L340">call.ts:340</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets a call value from the database filtered by the callref.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>field: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="invalidatecache" class="tsd-anchor"></a>
 					<h3>invalidate<wbr>Cache</h3>
@@ -519,7 +670,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L322">call.ts:322</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L322">call.ts:322</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_call_.callrecord" class="tsd-signature-type">CallRecord</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -536,7 +687,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L210">call.ts:210</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L210">call.ts:210</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -567,7 +718,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L287">call.ts:287</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L287">call.ts:287</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -589,7 +740,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L256">call.ts:256</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L256">call.ts:256</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -617,7 +768,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L225">call.ts:225</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L225">call.ts:225</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -639,7 +790,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/call.ts#L174">call.ts:174</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/call.ts#L174">call.ts:174</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -663,7 +814,7 @@
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="../index"><em>Globals</em></a>
+						<a href="../globals"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
 						<a href="../modules/_call_">"call"</a>
@@ -682,6 +833,36 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="_call_.callrecord#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_call_.callrecord#_callclass" class="tsd-kind-icon">_call<wbr>Class</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_call_.callrecord#_callref" class="tsd-kind-icon">_callref</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_call_.callrecord#_customer" class="tsd-kind-icon">_customer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_call_.callrecord#_description" class="tsd-kind-icon">_description</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_call_.callrecord#_lastupdatetext" class="tsd-kind-icon">_last<wbr>Update<wbr>Text</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_call_.callrecord#_logdatex" class="tsd-kind-icon">_log<wbr>DateX</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_call_.callrecord#_owner" class="tsd-kind-icon">_owner</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_call_.callrecord#_status" class="tsd-kind-icon">_status</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_call_.callrecord#_summary" class="tsd-kind-icon">_summary</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_call_.callrecord#_xmlmc" class="tsd-kind-icon">_xmlmc</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="_call_.callrecord#callclass" class="tsd-kind-icon">call<wbr>Class</a>
@@ -724,6 +905,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_call_.callrecord#close" class="tsd-kind-icon">close</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_call_.callrecord#getcallvalue" class="tsd-kind-icon">get<wbr>Call<wbr>Value</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_call_.callrecord#invalidatecache" class="tsd-kind-icon">invalidate<wbr>Cache</a>
