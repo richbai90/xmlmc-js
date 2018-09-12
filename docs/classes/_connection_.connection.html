@@ -38,6 +38,10 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -49,7 +53,7 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../index">Globals</a>
+					<a href="../globals">Globals</a>
 				</li>
 				<li>
 					<a href="../modules/_connection_">&quot;Connection&quot;</a>
@@ -96,6 +100,8 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_connection_.connection#_connect" class="tsd-kind-icon">_connect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_connection_.connection#_setupendpoint" class="tsd-kind-icon">_setup<wbr>Endpoint</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_connection_.connection#sendrequest" class="tsd-kind-icon">send<wbr>Request</a></li>
 							</ul>
 						</section>
@@ -114,7 +120,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/Connection.ts#L34">Connection.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/Connection.ts#L34">Connection.ts:34</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -154,7 +160,7 @@
 					<div class="tsd-signature tsd-kind-icon">cookie<wbr>Jar<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CookieJar</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/Connection.ts#L34">Connection.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/Connection.ts#L34">Connection.ts:34</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -164,7 +170,7 @@
 					<div class="tsd-signature tsd-kind-icon">endpoint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AxiosInstance</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/Connection.ts#L33">Connection.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/Connection.ts#L33">Connection.ts:33</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -174,7 +180,7 @@
 					<div class="tsd-signature tsd-kind-icon">https<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/Connection.ts#L32">Connection.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/Connection.ts#L32">Connection.ts:32</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -184,7 +190,7 @@
 					<div class="tsd-signature tsd-kind-icon">port<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/Connection.ts#L31">Connection.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/Connection.ts#L31">Connection.ts:31</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -194,13 +200,86 @@
 					<div class="tsd-signature tsd-kind-icon">server<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/Connection.ts#L30">Connection.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/Connection.ts#L30">Connection.ts:30</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_connect" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _connect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_connect<span class="tsd-signature-symbol">(</span>server<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, port<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosInstance</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/Connection.ts#L57">Connection.ts:57</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>private connect method. Responsible for inferring https.
+									Creates an instance of axios to use to send requests to and from the server.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>server: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>port: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosInstance</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_setupendpoint" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _setup<wbr>Endpoint</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_setup<wbr>Endpoint<span class="tsd-signature-symbol">(</span>axiosCookieJar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosInstance</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/Connection.ts#L103">Connection.ts:103</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>axiosCookieJar: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>instance<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosInstance</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosInstance</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>instance: <span class="tsd-signature-type">AxiosInstance</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosInstance</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosInstance</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="sendrequest" class="tsd-anchor"></a>
 					<h3>send<wbr>Request</h3>
@@ -211,7 +290,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/686ab43/src/Connection.ts#L92">Connection.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/richbai90/xmlmc-js/blob/6a3e468/src/Connection.ts#L92">Connection.ts:92</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -237,7 +316,7 @@
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="../index"><em>Globals</em></a>
+						<a href="../globals"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
 						<a href="../modules/_connection_">"<wbr>Connection"</a>
@@ -269,6 +348,12 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 								<a href="_connection_.connection#server" class="tsd-kind-icon">server</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_connection_.connection#_connect" class="tsd-kind-icon">_connect</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_connection_.connection#_setupendpoint" class="tsd-kind-icon">_setup<wbr>Endpoint</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_connection_.connection#sendrequest" class="tsd-kind-icon">send<wbr>Request</a>
 							</li>
@@ -278,6 +363,15 @@
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="../interfaces/_connection_.xmlmcresponse" class="tsd-kind-icon">Xmlmc<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_connection_#handledataparam" class="tsd-kind-icon">handle<wbr>Data<wbr>Param</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_connection_#isiterable" class="tsd-kind-icon">is<wbr>Iterable</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_connection_#transformresponse" class="tsd-kind-icon">transform<wbr>Response</a>
 					</li>
 				</ul>
 			</nav>
