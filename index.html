@@ -65,16 +65,19 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="xmlmc-js">xmlmc-js</h1>
-				<p>A javascript wrapper for the Supportworks XMLMC API. Currently still in beta stage.
-				To use run</p>
+				<p>A javascript wrapper for the Supportworks XMLMC API. To use run</p>
 				<pre><code class="lang-js">npm install xmlmc
-<span class="hljs-keyword">const</span> Xmlmc = <span class="hljs-built_in">require</span>(<span class="hljs-string">'xmlmc'</span>);
+<span class="hljs-keyword">import</span> { XmlMethodCall } = <span class="hljs-keyword">from</span> <span class="hljs-string">'xmlmc'</span>;
 </code></pre>
 				<h2 id="usage">Usage</h2>
-				<p>The package is built for a node server. To use in a web browser, you will need to
-				use a bundler like Webpack. Below is an example of using the package in a node environment.</p>
-				<pre><code class="lang-js"><span class="hljs-keyword">const</span> xmlmc = <span class="hljs-keyword">new</span> Xmlmc(<span class="hljs-string">'https://devserver.local'</span>);
-xmlmc.session.analystLogon(<span class="hljs-string">'admin'</span>, <span class="hljs-string">'password'</span>).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+				<p>The package is isomorphic. To use with webpack or browserify, just require it in your script as you normally would.
+				To use it in a strictly browser environment, just use the minified code in dist/browser. The code will support browsers</p>
+				<blockquote>
+					<p>= firefox 52 and IE 10 / node &gt;= 6.10</p>
+				</blockquote>
+				<pre><code class="lang-js"><span class="hljs-keyword">import</span> { XmlmMethodCall } <span class="hljs-keyword">from</span> <span class="hljs-string">'xmlmc'</span>
+<span class="hljs-keyword">const</span> xmlmc = <span class="hljs-keyword">new</span> XmlMethodCall(<span class="hljs-string">'https://devserver.local'</span>);
+xmlmc.session.analystLogon(<span class="hljs-string">'admin'</span>, btoa(<span class="hljs-string">'password'</span>)).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
     ...
 }).catch(promiseCatcher)
 
@@ -82,7 +85,9 @@ xmlmc.session.analystLogon(<span class="hljs-string">'admin'</span>, <span class
     <span class="hljs-built_in">console</span>.log(e);
 }
 </code></pre>
-				<p>The default export is the <code>XmlMethodCall</code> class</p>
+				<p>Or use async/await</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">await</span> xmlmc.session.analystLogon(<span class="hljs-string">'admin'</span>,btoa(<span class="hljs-string">'password'</span>))
+</code></pre>
 				<p>View the full docs <a href="https://richbai90.github.io/xmlmc-js/">here</a> </p>
 			</div>
 		</div>
@@ -99,7 +104,49 @@ xmlmc.session.analystLogon(<span class="hljs-string">'admin'</span>, <span class
 						<a href="modules/_request_.html">"<wbr>Request"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_xmlmethodcall_.html">"<wbr>Xml<wbr>Method<wbr>Call"</a>
+						<a href="modules/_browser_connection_.html">"browser/<wbr>Connection"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_browser_call_.html">"browser/call"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_browser_index_.html">"browser/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_browser_services_admin_.html">"browser/services/<wbr>Admin"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_browser_services_data_.html">"browser/services/<wbr>Data"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_browser_services_helpdesk_.html">"browser/services/<wbr>Helpdesk"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_browser_services_knowledgebase_.html">"browser/services/<wbr>Knowledgebase"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_browser_services_mylibrary_.html">"browser/services/<wbr>Mylibrary"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_browser_services_reporting_.html">"browser/services/<wbr>Reporting"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_browser_services_selfservice_.html">"browser/services/<wbr>Selfservice"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_browser_services_session_.html">"browser/services/<wbr>Session"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_browser_services_survey_.html">"browser/services/<wbr>Survey"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_browser_services_system_.html">"browser/services/<wbr>System"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_call_.html">"call"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_index_.html">"index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_services_admin_.html">"services/<wbr>Admin"</a>
@@ -130,9 +177,6 @@ xmlmc.session.analystLogon(<span class="hljs-string">'admin'</span>, <span class
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_services_system_.html">"services/<wbr>System"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_tests_e2e_.html">"tests/e2e"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_types_addressbooktypes_.html">"types/<wbr>Addressbook<wbr>Types"</a>
