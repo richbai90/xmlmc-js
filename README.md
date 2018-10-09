@@ -15,7 +15,7 @@ To use it in a strictly browser environment, just use the minified code in dist/
 >= firefox 52 and IE 10 / node >= 6.10
 
 ```js
-import { XmlmMethodCall } from 'xmlmc'
+import { XmlMethodCall } from 'xmlmc'
 const xmlmc = new XmlMethodCall('https://devserver.local');
 xmlmc.session.analystLogon('admin', btoa('password')).then(() => {
     ...
