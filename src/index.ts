@@ -25,7 +25,7 @@ export type XmlmcOptions = {
 }
 
 export class XmlMethodCall {
-    private connection: Connection;
+    protected connection: Connection;
     opts: XmlmcOptions;
     session: Session;
     data: Data;

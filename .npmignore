@@ -9,4 +9,5 @@ yarn.lock
 .gitignore
 dist/ESNEXT
 dist/tests
-
+tests
+.vscode

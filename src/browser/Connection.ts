@@ -1,6 +1,4 @@
-import http, {AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse} from 'axios'
-import {Request} from "../Request";
-import axiosCookieJarSupport = require('@3846masa/axios-cookiejar-support');
+import { Request } from "../Request";
 
 /**
  * @typedef {Object} Response
@@ -14,129 +12,177 @@ import axiosCookieJarSupport = require('@3846masa/axios-cookiejar-support');
  * Ensures that a cookie is saved each time a request is sent and received.
  */
 
-
 export interface XmlmcResponse {
-    [index: string]: any;
+  [index: string]: any;
 
-    status: boolean;
-    data: Array<{ [index: string]: any }>;
-    params: { [index: string]: any };
+  status: boolean;
+  data: Array<{ [index: string]: any }>;
+  params: { [index: string]: any };
 }
-
 
 export class Connection {
+  protected server: string;
+  protected port: number;
+  protected https: boolean;
+  private cookie: string | null;
+  private url: string;
 
-    protected server: string;
-    protected port: number;
-    protected https: boolean;
-    protected storeCookies: boolean;
-    protected endpoint: AxiosInstance;
+  /**
+   * Create a connection. Defers to the private _connect method.
+   * @param {string} server - IP or FQDN to send the requests to
+   * @param {number} port - Port to use when sending the requests. For https use 443. Defaults to 5015.
+   */
+  constructor(server: string = "localhost", port: number = 5015) {
+    this.server = server;
+    this.port = port;
+    this.https = false;
+    this.url = this._connect(server, port);
+    this.cookie = null;
+  }
 
-    /**
-     * Create a connection. Defers to the private _connect method.
-     * @param {string} server - IP or FQDN to send the requests to
-     * @param {number} port - Port to use when sending the requests. For https use 443. Defaults to 5015.
-     */
-    constructor(server: string = 'localhost', port: number = 5015) {
-        this.server = server;
-        this.port = port;
-        this.https = false;
-        this._connect(server, port);
+  public getCookie() {
+    return this.cookie;
+  }
+
+  private setCookie(cookie?: string | null) {
+    if (cookie) {
+      this.cookie = cookie;
+    }
+  }
+
+  /**
+   * Private method responsible for posting the XML Request to the endpoint
+   * @param {string} body XML request
+   */
+  private async post(body: string): Promise<ParsedResponse> {
+    const response = await fetch(this.url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/xmlmc",
+        Charset: "UTF-8",
+        Accept: "text/json",
+        "Accept-Charset": "UTF-8",
+        "Cache-Control": "no-cache"
+      },
+      credentials: "include",
+      body
+    });
+    if (!response.ok) {
+      throw {
+        status: false,
+        params: {
+          error: "network error",
+          status: response.status,
+          text: response.statusText
+        },
+        data: []
+      };
     }
 
-    /**
-     * private connect method. Responsible for inferring https.
-     * Creates an instance of axios to use to send requests to and from the server.
-     * @param server
-     * @param port
-     * @returns {*}
-     * @private
-     */
-    private _connect(server: string, port: number): void {
-        let url;
-        switch (port) {
-            case 443:
-                this.https = true;
-                url = `https://${server}/sw/`;
-                break;
-            case 80:
-                url = `http://${server}/sw/`;
-                break;
-            default:
-                url = `http://${server}:${port}`;
-        }
-
-
-        this.endpoint = http.create({
-            baseURL: url,
-            withCredentials: true,
-            headers: {
-                "Content-Type": "text/xmlmc",
-                "Charset": "UTF-8",
-                "Accept": "text/json",
-                "Accept-Charset": "UTF-8",
-                "Cache-Control": "no-cache",
-            },
-            transformResponse,
-        });
-
+    try {
+      await this.setCookie(response.headers.get("Set-Cookie"));
+    } catch (e) {
+      // couldn't set the cookie
     }
 
-    /**
-     * @param xmlmc
-     * @returns {Promise.<Response>}
-     * @throws Module importing error. Occurs if for some reason we were unable to require the underlying modules. Indicates a problem with the library, not the developer.
-     */
-    async sendRequest(xmlmc: Request): Promise<XmlmcResponse> {
-        return new Promise<XmlmcResponse>((resolve, reject) => {
-            const post: string = this.port === 80 || this.https ? '/xmlmc/' : '/sw';
-            this.endpoint.post(post, xmlmc.toString(), {withCredentials: true}).then((response: AxiosResponse) => {
-                response.data.status ? resolve(<XmlmcResponse>response.data) : reject(response.data);
-            }).catch((err: AxiosError) => {
-                reject(err);
-            });
+    return transformResponse(await response.json());
+  }
+
+  /**
+   * private connect method. Responsible for inferring https.
+   * Creates an instance of axios to use to send requests to and from the server.
+   * @param server
+   * @param port
+   * @returns {*}
+   * @private
+   */
+  private _connect(server: string, port: number): string {
+    switch (port) {
+      case 443:
+        this.https = true;
+        return `https://${server}/sw/xmlmc/`;
+      case 80:
+        return `http://${server}/sw/xmlmc/`;
+      default:
+        return `http://${server}:${port}/sw`;
+    }
+  }
+
+  /**
+   * @param xmlmc
+   * @returns {Promise.<Response>}
+   * @throws Module importing error. Occurs if for some reason we were unable to require the underlying modules. Indicates a problem with the library, not the developer.
+   */
+  sendRequest(xmlmc: Request): Promise<XmlmcResponse> {
+    return new Promise<XmlmcResponse>((resolve, reject) => {
+      this.post(xmlmc.toString())
+        .then(response => {
+          response.status ? resolve(<XmlmcResponse>response) : reject(response);
         })
-    }
+        .catch(err => {
+          reject(err);
+        });
+    });
+  }
 }
 
+function transformResponse(response: {
+  "@status": boolean;
+  data?: any;
+  [p: string]: any;
+}) {
+  let { "@status": status, data, ...rest } = response;
+  let parsedResponse: ParsedResponse = Object.assign(
+    { status: status, params: {}, data: [] },
+    rest
+  );
 
-function transformResponse(response: string) {
-    let parsedResponse: AxiosResponse['data'] = JSON.parse(response);
-    let {'@status': status, data, ...rest} = parsedResponse;
-    parsedResponse = Object.assign({status: status, params: {}, data: []}, rest);
-
-    data = isIterable(data) && data;
-    if (data) {
-        parsedResponse.data = handleDataParam(data);
-
-        if (data.hasOwnProperty('metaData')) {
-            parsedResponse.params.metadata = data.metaData;
-        }
-
-        if (data.hasOwnProperty('generatedId')) {
-            parsedResponse.params.generatedId = data.generatedId;
-        }
+  data = isIterable(data) && data;
+  if (data) {
+    if (data.hasOwnProperty("metaData")) {
+      parsedResponse.params.metadata = data.metaData;
+      delete data.metaData;
     }
 
-    return parsedResponse;
+    if (data.hasOwnProperty("generatedId")) {
+      parsedResponse.params.generatedId = data.generatedId;
+      delete data.generatedId;
+    }
+    parsedResponse.data = handleDataParam(data);
+  }
+
+  return parsedResponse;
 }
 
-function handleDataParam(data: AxiosResponse['data']): AxiosResponse['data'] {
-    if (Array.isArray(data)) {
-        return data;
-    }
-    if (data.hasOwnProperty('rowData')) {
-        return (Array.isArray(data.rowData.row) && data.rowData.row) || [data.rowData.row];
-    }
+function handleDataParam(
+  data: ParsedResponse["data"][0] | ParsedResponse["data"]
+): ParsedResponse["data"] {
+  if (Array.isArray(data)) {
+    return data;
+  }
+  if (data.hasOwnProperty("rowData")) {
+    return (
+      (Array.isArray(data.rowData.row) && data.rowData.row) || [
+        data.rowData.row
+      ]
+    );
+  }
+
+  return [data];
 }
 
 function isIterable(obj: any): boolean {
-    // checks for null and undefined
-    if (obj == null) {
-        return false;
-    }
+  // checks for null and undefined
+  if (obj == null) {
+    return false;
+  }
 
-    return Object(obj) === obj || typeof obj[Symbol.iterator] === 'function';
+  return Object(obj) === obj || typeof obj[Symbol.iterator] === "function";
 }
 
-
+// todo we can do better typing than this
+export interface ParsedResponse {
+  status: boolean;
+  params: { [p: string]: any };
+  data: Array<{ [p: string]: any }>;
+}

@@ -1,5 +1,5 @@
 import * as paramTypes from'../../types/MylibraryTypes'
-import {AxiosError, AxiosResponse} from "axios";
+
 import {XmlmcParams} from"../../types/XmlmcTypes";
 import {Connection, XmlmcResponse} from '../Connection'
 import {XmlMethodCall} from '..'
