@@ -1,10 +1,8 @@
 var path = require('path');
-var webpack = require('webpack');
 var plugins = [];
 
-plugins.push(new webpack.optimize.UglifyJsPlugin({minimize: true}));
-
 module.exports = [{
+    mode: 'none',
     entry: './src/browser/index.ts',
     output: {
         path: path.resolve(__dirname, 'dist', 'browser'),
@@ -12,13 +10,12 @@ module.exports = [{
         library: 'xmlmc',
         libraryTarget: 'umd',
     },
+    optimization: {
+        minimize: true
+      },
     resolve: {
         // Add `.ts` and `.tsx` as a resolvable extension.
         extensions: ['.ts', '.tsx', '.js']
-    },
-
-    externals: {
-        'tough-cookie': 'CookieJar'
     },
     module: {
         rules: [

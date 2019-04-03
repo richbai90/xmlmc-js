@@ -14,6 +14,7 @@ module.exports = [
       path: path.resolve(__dirname, "browser"),
       filename: "[name].js"
     },
+    mode: 'none',
     resolve: {
       // Add `.ts` and `.tsx` as a resolvable extension.
       extensions: [".ts", ".tsx", ".js"]
@@ -29,7 +30,8 @@ module.exports = [
           loader: "awesome-typescript-loader",
           exclude: [/node_modules/, /dist/],
           options: {
-            configFileName: path.resolve(__dirname, "tsconfig.json"),
+            transpileOnly: true,
+            configFileName: path.resolve(__dirname, "tests.tsconfig.json"),
             useBabel: true,
             babelOptions: {
               presets: [
