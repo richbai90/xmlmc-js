@@ -38,4 +38,4 @@ Tested on all major browsers with great thanks to [BrowserStack][1]
 ![Browser Stack][browserstack]
 
 [1]: https://www.browserstack.com/
-[browserstack]: (https://i.imgur.com/dtMU9FP.png)
+[browserstack]: https://i.imgur.com/dtMU9FP.png
