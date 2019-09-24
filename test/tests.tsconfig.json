@@ -2,9 +2,7 @@
   "compilerOptions": {
     "target": "ESNEXT",
     "module": "commonjs",
-    "types": ["@3846masa/axios-cookiejar-support"],
-    "exclude": [
-      "node_modules"
-    ]
-  }
+    "types": ["@3846masa/axios-cookiejar-support"]
+  },
+  "exclude": ["node_modules"]
 }
