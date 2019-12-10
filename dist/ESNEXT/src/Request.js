@@ -26,8 +26,10 @@ class Request {
                 return;
             }
             if (Object.getPrototypeOf(param) === Object.prototype) {
+                const _el = el;
                 el = el.ele(p);
                 this._createXmlmc(params[p], el);
+                el = _el;
             }
             else {
                 el.ele(p, param.toString());
