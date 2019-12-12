@@ -19,8 +19,8 @@ class Data {
         this.service = 'data';
         this.paramMap = new _map2.default([['addRecord', ['table', 'returnModifiedData']], ['deleteRecord', ['table', 'keyValue']], ['getColumnInfoList', ['database', 'table']], ['getRecord', ['database', 'table', 'keyValue', 'formatValues', 'returnMeta', 'returnRawValues']], ['getStoredQueryList', ['folder']], ['getTableInfoList', ['database']], ['invokeStoredQuery', ['storedQuery', 'parameters']], ['runDataImport', ['confFileName', 'dataFileName']], ['sqlQuery', ['database', 'query', 'rowOffset', 'rowCount', 'formatValues', 'returnMeta', 'maxResults', 'returnRawValues']], ['updateRecord', ['table', 'returnModifiedData']]]);
     }
-    addRecord(table, optionalParams) {
-        let request = new Request_1.Request(this.service, 'addRecord', (0, _assign2.default)({}, { table }, optionalParams || {}), this.paramMap.get('addRecord') || []);
+    addRecord(table, data, optionalParams) {
+        let request = new Request_1.Request(this.service, 'addRecord', (0, _assign2.default)({}, { table }, optionalParams || {}), this.paramMap.get('addRecord') || [], data);
         return this.connection.sendRequest(request);
     }
     deleteRecord(table, keyValue, optionalParams) {
@@ -70,8 +70,8 @@ class Data {
         }, optionalParams || {}), this.paramMap.get('sqlQuery') || []);
         return this.connection.sendRequest(request);
     }
-    updateRecord(table, optionalParams) {
-        let request = new Request_1.Request(this.service, 'updateRecord', (0, _assign2.default)({}, { table }, optionalParams || {}), this.paramMap.get('updateRecord') || []);
+    updateRecord(table, data, optionalParams) {
+        let request = new Request_1.Request(this.service, 'updateRecord', (0, _assign2.default)({}, { table }, optionalParams || {}), this.paramMap.get('updateRecord') || [], data);
         return this.connection.sendRequest(request);
     }
 }

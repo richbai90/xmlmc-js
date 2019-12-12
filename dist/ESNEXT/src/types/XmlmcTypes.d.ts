@@ -12,6 +12,9 @@ declare module xmlmcTypes {
         _createXmlmc(params: XmlmcParam, el: XMLElementOrXMLNode, key: string): void;
         toString(): string;
     }
+    interface InputData {
+        [column: string]: string | number;
+    }
     interface SessionVariable {
         name: string;
         value: string;

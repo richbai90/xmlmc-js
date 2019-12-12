@@ -2,13 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const xmlbuilder_1 = require("xmlbuilder");
 class Request {
-    constructor(service, method, params = {}, paramMap) {
+    constructor(service, method, params = {}, paramMap, inputData) {
         this.service = service;
         this.method = method;
         this.xmlmc = xmlbuilder_1.create('methodCall').att('service', service).att('method', method);
         this.paramsNotSet = true;
         if (Object.keys(params).length) {
             this.addParams(params, paramMap);
+        }
+        if (inputData) {
+            this.addData(inputData);
         }
     }
     _createXmlmc(params, el = this.xmlmc, key = 'params') {
@@ -34,6 +37,16 @@ class Request {
             else {
                 el.ele(p, param.toString());
             }
+        });
+    }
+    /**
+     * Add data to the xmlmc string
+     * @param data data to add
+     */
+    addData(data) {
+        const ele = this.xmlmc.ele('data');
+        Object.keys(data).forEach(key => {
+            ele.ele(key, data[key].toString());
         });
     }
     /**
