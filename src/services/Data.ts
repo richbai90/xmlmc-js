@@ -1,6 +1,6 @@
 import * as paramTypes from '../types/DataTypes'
 
-import {XmlmcParams} from "../types/XmlmcTypes";
+import {XmlmcParams, InputData} from "../types/XmlmcTypes";
 import {Connection, XmlmcResponse} from '../Connection'
 import {XmlMethodCall} from '..'
 import {Request} from '../Request'
@@ -19,8 +19,8 @@ import {Request} from '../Request'
             this.paramMap = new Map([['addRecord', ['table', 'returnModifiedData',]], ['deleteRecord', ['table', 'keyValue',]], ['getColumnInfoList', ['database', 'table',]], ['getRecord', ['database', 'table', 'keyValue', 'formatValues', 'returnMeta', 'returnRawValues',]], ['getStoredQueryList', ['folder',]], ['getTableInfoList', ['database',]], ['invokeStoredQuery', ['storedQuery', 'parameters',]], ['runDataImport', ['confFileName', 'dataFileName',]], ['sqlQuery', ['database', 'query', 'rowOffset', 'rowCount', 'formatValues', 'returnMeta', 'maxResults', 'returnRawValues',]], ['updateRecord', ['table', 'returnModifiedData',]],]);
         }
 
-        addRecord(table: string, optionalParams?: paramTypes.addRecordParams): Promise<XmlmcResponse> {
-            let request = new Request(this.service, 'addRecord', <XmlmcParams>Object.assign({}, {table}, optionalParams || {}), this.paramMap.get('addRecord') || []);
+        addRecord(table: string, data: InputData, optionalParams?: paramTypes.addRecordParams): Promise<XmlmcResponse> {
+            let request = new Request(this.service, 'addRecord', <XmlmcParams>Object.assign({}, {table}, optionalParams || {}), this.paramMap.get('addRecord') || [], data);
             return this.connection.sendRequest(request)
         }
 
@@ -79,8 +79,8 @@ import {Request} from '../Request'
             return this.connection.sendRequest(request)
         }
 
-        updateRecord(table: string, optionalParams?: paramTypes.updateRecordParams): Promise<XmlmcResponse> {
-            let request = new Request(this.service, 'updateRecord', <XmlmcParams>Object.assign({}, {table}, optionalParams || {}), this.paramMap.get('updateRecord') || []);
+        updateRecord(table: string, data: InputData, optionalParams?: paramTypes.updateRecordParams): Promise<XmlmcResponse> {
+            let request = new Request(this.service, 'updateRecord', <XmlmcParams>Object.assign({}, {table}, optionalParams || {}), this.paramMap.get('updateRecord') || [], data);
             return this.connection.sendRequest(request)
         }
     }

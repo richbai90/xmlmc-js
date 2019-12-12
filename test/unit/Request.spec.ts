@@ -49,8 +49,14 @@ const request = new Request("helpdesk", "logAndAssignNewCall", params, [
   "additionalCallValues"
 ]);
 
+const dataRequest = new Request('data', 'addRecord', {table: 'opencall'}, [], {callref: 5});
+
 describe('make sure that request class works correctly', () => {
     it('should correctly order results', () => {
         console.log(request.xmlmc.toString())
+    })
+
+    it('should accept an optional data property', () => {
+        console.log(dataRequest.xmlmc.toString());
     })
 })

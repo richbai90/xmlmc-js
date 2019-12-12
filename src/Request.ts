@@ -1,5 +1,5 @@
 import {create, XMLElementOrXMLNode} from 'xmlbuilder';
-import {XmlmcParam, XmlmcParams, XmlmcRequest} from './types/XmlmcTypes'
+import {XmlmcParam, XmlmcParams, XmlmcRequest, InputData} from './types/XmlmcTypes'
 
 export class Request implements XmlmcRequest {
 
@@ -8,7 +8,7 @@ export class Request implements XmlmcRequest {
     paramsNotSet: boolean;
     xmlmc: XMLElementOrXMLNode;
 
-    constructor(service: string, method: string, params: XmlmcParams = {}, paramMap: Array<string>) {
+    constructor(service: string, method: string, params: XmlmcParams = {}, paramMap: Array<string>, inputData? : InputData) {
         this.service = service;
         this.method = method;
         this.xmlmc = create('methodCall').att('service', service).att('method', method);
@@ -16,6 +16,10 @@ export class Request implements XmlmcRequest {
 
         if (Object.keys(params).length) {
             this.addParams(params, paramMap);
+        }
+
+        if(inputData) {
+            this.addData(inputData);
         }
     }
 
@@ -42,6 +46,17 @@ export class Request implements XmlmcRequest {
             } else {
                 el.ele(p, param.toString());
             }
+        })
+    }
+
+    /**
+     * Add data to the xmlmc string
+     * @param data data to add
+     */
+    addData(data : InputData) {
+        const ele = this.xmlmc.ele('data');
+        Object.keys(data).forEach(key => {
+            ele.ele(key, data[key].toString())
         })
     }
 
@@ -72,6 +87,8 @@ export class Request implements XmlmcRequest {
         });
         this._createXmlmc(orderedParams);
     }
+
+
 
     toString(): string {
         return this.xmlmc.toString();

@@ -35,6 +35,10 @@ module xmlmcTypes {
         toString(): string
     }
 
+    export interface InputData {
+        [column : string] : string | number;
+    }
+
     export interface SessionVariable {
         name: string;
         value: string;
